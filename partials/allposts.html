@@ -1,0 +1,94 @@
+<style>
+#posts{
+	
+	opacity:0;
+}
+
+</style>
+<div class="blogContainer col-md-12 col-xs-12 paddingReset"style="
+	background:url(images/patterns/sativa.png) !important;" ng-controller="blogController">
+
+		<div class="header" style="background:url(images/patterns/blue.jpg)">
+			<!-- <h2>PROJECTS</h2> -->
+		</div>
+	<div class="overlay"><h2 class="hover-up">TECH BLOG</h2></div>
+
+
+<div class="col-md-12 col-xs-12 goUp" >
+<h5 class="searchtitle">SEARCH BY TAG <input type="text" class="searchBar" ng-model="filters.tags"/></h5>
+
+		<div id="grid">
+				<div id="posts" masonry>
+					<div class="post masonry-brick" ng-repeat="post in posts | filter:filters">
+					<a href="#/post">
+						<img src="images/yellow.jpg"/>
+						<div class="date">{{post.postdate}}</div>
+						<div class="title">{{post.title}}</div>
+						
+						<div class="blogContent">
+							<p>{{post.desc}} 
+							</p>
+						</div>
+						
+						<div class="tags" ng-repeat="tag in post.tags">
+							<div class="tag"><i class="fa fa-tag"></i> {{tag}}</div>
+						</div>
+				
+					</a>
+					</div>
+
+				</div>
+				
+			</div>
+
+<div class="row" style="
+	background:url(images/patterns/sativa.png);">
+ <div class="pagination col-md-3 col-md-push-5 col-xs-push-2 col-xs-12">
+              <ul>
+                <li ng-class="prevPageDisabled()">
+                  <a href ng-click="prevPage()"><i class="fa fa-angle-left"></i> Prev</a>
+                </li>
+                 <li ng-repeat="n in range()">
+                  <a href ng-click="setPage($event,n)" class="navnos" id="{{n}}">{{n+1}}</a>
+                </li>
+                <li ng-class="nextPageDisabled()">
+                  <a href ng-click="nextPage()">Next <i class="fa fa-angle-right"></i></a>
+                </li>
+              </ul>
+  </div>
+</div>
+		</div>
+	</div>
+<script>
+
+	$("#posts").animate({'marginTop':"0",'opacity':"1"},{duration:"300",easing:"easeInBounce"});
+	
+		var gutter = parseInt(jQuery('.post').css('marginBottom'));
+		var container = jQuery('#posts');
+
+		container.masonry({
+			gutter: gutter,
+			itemSelector: '.post',
+			columnWidth: '.post'
+		});
+$(window).scrollTop(0);
+$(".chevron").css({'background':"url(images/patterns/blue.jpg"});
+$(".overlay").css({'height':"160px",'margin-top':'-50px'});
+$(".overlay h2").css({'padding-top':"80px"});	
+		jQuery(window).bind('resize', function(){
+			if(!jQuery('#posts').parent().hasClass('.container')){
+				post_width = jQuery('.post').width() + gutter;
+				jQuery('#posts, body > #grid').css('width','auto');
+				posts_per_row = jQuery('#posts').innerWidth() / post_width;
+				floor_posts_width = (Math.floor(posts_per_row)*post_width) - gutter;
+				ceil_posts_width =  (Math.ceil(posts_per_row)*post_width) - gutter;
+				posts_width = (ceil_posts_width > jQuery('#posts').innerWidth())?floor_posts_width:ceil_posts_width;
+				if( posts_width == jQuery('.post').width()){
+					posts_width = '100%';
+				}
+			}
+
+		}).trigger('resize');
+
+</script>
+

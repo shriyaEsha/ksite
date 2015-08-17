@@ -1,0 +1,56 @@
+<div ng-controller="navController">
+  <nav class="navbar" >
+
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+         <img id="ctf-logo" alt="ctf-logo" class="pull-left sm-top-margin tcsLogo" src="images/ctf.png">
+         
+       </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+         <li ng-repeat="item in navItems" class="{{item.dropdownclass}}"><a class="{{item.aclass}}" id="{{item.dropid}}" href="{{ item.linkTo }}" ng-click="animateMe(item.outerContainer)"><i class="{{ item.fa }}"></i> {{ item.name }}
+         </a>
+         </li>
+         <li class="dropdown">
+          <a class="navelem dropdown-toggle" id="dropmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           
+            <i class="fa fa-archive"></i> Projects
+             <span class="caret"></span>
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="dropmenu">
+              <li><a href="#/inspireme"><i class="fa fa-smile-o navicons"></i> Inspire Me</a></li>
+              <li><a href="#/yourproposal"><i class="fa fa-exclamation navicons"></i> I have an Idea!</a></li>
+            </ul>
+          </li>
+        <!-- <li><form class="navbar-form" role="search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+              <button class="btn submitBtn" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </form>
+      </li> -->
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+
+<script>
+$(".navbar-toggle").click(function(){
+  $(".top-bar").toggleClass("top-bar-anim");
+  $(".middle-bar").toggleClass("middle-bar-anim");
+  $(".bottom-bar").toggleClass("bottom-bar-anim");
+});
+</script>

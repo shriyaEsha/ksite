@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="ksite.css" rel="stylesheet">
+<link href="fontawesome/css/font-awesome.min.css" rel="stylesheet">
+<!--clickfx-->
+     <link rel="stylesheet" type="text/css" href="css/clickfx/component.css" />
+     <link rel="stylesheet" type="text/css" href="css/clickfx/demo.css" />
+
+     <script src="js/tabs/modernizr.custom.js"></script>
+     <script src="js/clickfx/modernizr.custom.js"></script>
+
+
+
+<script src="js/clickfx/classie.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+
+<style>
+body{
+  overflow-x:hidden !important;
+  width:100%;
+  height:100%;
+}
+
+
+</style>
+<!--navbar-->
+
+<div class="col-md-12 headerBox hidden-xs hidden-sm">
+<div class="col-md-4 ">
+<img src="images/ceg_desc.png" class="headerPics" id="ceg"/>
+</div>
+<div class="col-md-4">
+<img src="images/k.png" class="headerPics" id="k"/>
+</div>
+<div class="col-md-4 col-md-push-1">
+<img src="images/unesco.png" class="headerPics" id="unesco"/>
+</div>
+</div>
+<div class="bg">
+<div class="overlay">
+
+  <nav class="navbar" >
+    <div class="container-fluid paddingReset">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+       <!-- <a class="navbar-brand" href="#">
+         <img id="ctf-logo" style="background:url(images/gplay.png); background-color:white;width:" alt="ctf-logo" class="text-center" src="images/k.png">
+         
+       </a> -->
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="width:105% !important">
+         <li>
+          <a class="text">HOME</a>
+          <div class="topVane">
+            <i class="fa fa-home"></i>
+          </div>
+         </li>
+          <li id="eventsNav" class="hidden-xs">
+          <a class="text">EVENTS</a>
+          <div class="topVane">
+            <i class="fa fa-bullhorn"></i>
+          </div>
+         </li>
+         <li class="eventdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <span class="caret"></span></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <span class="sideText">Engineering</span>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <span class="sideText">Robotics</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-laptop"></i>
+                            <span class="sideText">Online</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-terminal"></i>
+                            <span class="sideText">Coding</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-money"></i>
+                            <span class="sideText">Management</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <span class="sideText">General</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-puzzle-piece"></i>
+                            <span class="sideText">Quizzes</span>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li id="wkshopsNav" class='hidden-xs'>
+          <a class="text">WORKSHOPS</a>
+          <div class="topVane">
+            <i class="fa fa-wrench"></i>
+          </div>
+         </li>
+
+         <li class="wkshopdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORKSHOPS <span class="caret"></span></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <span class="sideText">Engineering</span>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <span class="sideText">Robotics</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-inr"></i>
+                            <span class="sideText">Management</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <span class="sideText">General</span>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-university"></i>
+                            <span class="sideText">School</span>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li>
+          <a class="text">XCEED</a>
+          <div class="topVane">
+            <i class="fa fa-bus"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">SPONSORS</a>
+          <div class="topVane">
+            <i class="fa fa-inr"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text" style="margin-top:-7px">GUEST LECTURES</a>
+          <div class="topVane">
+            <i class="fa fa-microphone"></i>
+          </div>
+         </li>
+
+         <li class="">
+          <a class="text">K!ARNIVAL</a>
+          <div class="topVane">
+            <i class="fa fa-flag"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">HOSPITALITY</a>
+          <div class="topVane">
+            <i class="fa fa-truck"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">ABOUT US</a>
+          <div class="topVane">
+            <i class="fa fa-angellist"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">CONTACT</a>
+          <div class="topVane">
+            <i class="fa fa-comments-o"></i>
+          </div>
+         </li>
+         <li id="loginNav" class="smalleritem hidden-xs">
+          <a class="text">LOGIN</a>
+          <div class="topVane">
+            <i class="fa fa-lock"></i>
+          </div>
+         </li>
+         <li class="logindrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN <span class="caret"></span></a>
+          <ul class="dropdown-menu loginNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <span class="sideText">K!</span>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-facebook"></i>
+                <span class="sideText">FACEBOOK</span>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-google"></i>
+                <span class="sideText">Google+</span>
+                </a>
+              </li>
+         </ul><!-- 
+         <li class="searchInput">
+            <form>
+            <div class="col-md-11 text-center">
+              <input type="text" id="searchdata" />
+            </div>
+            <div class="col-md-1">
+              <a class="submitsearch"><i class="fa fa-search fa-2x fa-fw"></i></a>
+            </div>
+            </form>
+         </li> -->
+       </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ <div class="col-md-12 col-xs-12 eventHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-2">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">Engineering</div>
+            </li>
+           <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-laptop"></i>
+              <div class="btmText">Online</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-terminal"></i>
+              <div class="btmText">Coding</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-binoculars"></i>
+              <div class="btmText">Quizzes</div>
+            </li>
+          </ul>
+</div>
+
+ <div class="col-md-12 col-xs-12 wkshopHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="wkshopCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><i class="fa fa-gear"></i>
+                <div class="btmText">Engineering</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+           
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-university"></i>
+              <div class="btmText">School</div>
+            </li>
+          </ul>
+</div>
+
+<!--login header -->
+<div class="col-md-12 col-xs-12 loginHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">K! Login</div>
+            </li>
+           <li class="eventCircle" style="margin-left:25px"><i class="fa fa-facebook"></i>
+              <div class="btmText">Facebook Login</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-google"></i>
+              <div class="btmText">Google+ Login</div>
+            </li>
+          </ul>
+</div>
+
+<!--put components here -->
+<div class="col-md-12 col-xs-12 paddingReset">
+<div class="container">
+<ul class="hospi_icons col-md-12 col-xs-12 paddingReset">
+<li class="hospi_icon col-md-2 col-xs-12">
+  <i class="fa fa-anchor text-center"></i>
+  <h5 class="btmText ">INTRODUCTION</h5>
+</li>
+<li class="hospi_icon col-md-2 col-xs-12">
+  <i class="fa fa-suitcase text-center"></i>
+  <h5 class="btmText ">ACCOMODATION</h5>
+</li>
+<li class="hospi_icon col-md-2 col-xs-12">
+  <i class="fa fa-bullhorn text-center"></i>
+  <h5 class="btmText ">INSTRUCTIONS</h5>
+</li>
+<li class="hospi_icon col-md-2 col-xs-12">
+  <i class="fa fa-map-marker text-center"></i>
+  <h5 class="btmText ">REACHING CEG</h5>
+</li>
+<li class="hospi_icon col-md-1 col-xs-12">
+  <i class="fa fa-info text-center"></i>
+  <h5 class="btmText ">FAQ</h5>
+</li>
+<li class="hospi_icon col-md-2 col-xs-12">
+  <i class="fa fa-phone text-center"></i>
+  <h5 class="btmText ">CONTACT</h5>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div><!-- overlay -->
+
+
+</div>
+
+<!--navbar ends-->
+
+
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  closeall();
+  
+});
+});
+  
+</script>
+
+<!--navbar script-->
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  $(".top-bar").toggleClass("top-bar-anim");
+  $(".middle-bar").toggleClass("middle-bar-anim");
+  $(".bottom-bar").toggleClass("bottom-bar-anim");
+});
+
+
+if( $(window).width() >= 600)
+{
+  $(".eventHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+  $(".loginHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+
+  $("#eventsNav").hover(function(){
+  $(".eventHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+  $("#loginNav").hover(function(){
+  $(".loginHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+
+  $(".navbar-nav li").hover(function(){
+    if($(this).attr("id") != "eventsNav" )
+  {
+  $(".eventHeader").animate({'opacity':"0"});
+  $(".eventHeader").fadeOut().finish();
+  }
+    if($(this).attr("id") != "wkshopsNav" )
+  {
+  $(".wkshopHeader").animate({'opacity':"0"});
+  $(".wkshopHeader").fadeOut().finish();
+  }
+
+    if($(this).attr("id") != "loginNav" )
+  {
+  $(".loginHeader").animate({'opacity':"0"});
+  $(".loginHeader").fadeOut().finish();
+  }
+  });
+
+  $(".eventHeader").hover(function(){
+  }, function(){
+   $(".eventHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".wkshopHeader").hover(function(){
+  }, function(){
+   $(".wkshopHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".loginHeader").hover(function(){
+  }, function(){
+   $(".loginHeader").animate({'opacity':"0"}).fadeOut();
+  });
+  
+  $(".wkshopHeader").animate({'opacity':"0"}).fadeOut().finish();
+  $("#wkshopsNav").hover(function(){
+    $(".wkshopHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+}
+
+});
+</script>

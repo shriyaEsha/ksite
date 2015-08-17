@@ -1,0 +1,68 @@
+	<div class="col-md-12 col-xs-12 paddingReset">
+		<div class="section" id="section4" style="background:url(images/patterns/congruent_outline.png)">
+			<!-- <img src="images/ceg.jpg" id="landing" data-stellar-ratio="1.5"/> -->
+			<div class="col-md-4 col-xs-4">
+			<div class="left-line"></div>
+			</div>
+
+			<div class="col-md-4 col-xs-12 text-center">
+			<div class="sectionTitle" style="color:aqua; border-bottom:10px double aqua;">PROJECTS</div>
+			</div>
+			<div class='col-md-4  col-xs-4'>
+			<div class="left-line"></div>
+			</div>
+			<div class="col-md-12">
+				<div class="bigTitle"  style="position:fixed" data-stellar-ratio="0.5">PROJECTS</div>
+			</div>
+			<div class="col-md-6 col-xs-12 col-md-push-3">
+				<div class="projectsContainer" ng-controller="projectController">
+					<div class="projitem col-md-12 col-xs-12 col-lg-12">
+						<h3 class='title'>SUPER DUPER DUPER DUPER LOOOONG PROJECT TITLE1</h3>
+						<h5 class="date">26<sup>th</sup> May, 2015</h5>
+
+						<div class="col-md-2"><img src="images/blogPic2.png" class="projImg"><!-- <i class="fa fa-calendar fa-4x black"></i> --></div>
+						<div class="col-md-10">
+
+							<p>Lots of Cool stuff about the project. Lots of Cool stuff about the project.
+								Lots of Cool stuff about the project. Lots of Cool stuff about the project.
+							</p>
+							<a class='more' href="#/project">READ MORE <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+						</div>
+
+
+					</div>
+
+					<div class="projitem col-md-12 col-lg-12 col-xs-12">
+						<h3 class='title'>SUPER DUPER DUPER DUPER LOOOONG PROJECT TITLE2</h3>
+						<h5 class="date">26<sup>th</sup> May, 2015</h5>
+
+						<div class="col-md-2"><img src="images/blogPic2.png" class="projImg"></i></div>
+						<div class="col-md-10">
+
+							<p>Lots of Cool stuff about the project. Lots of Cool stuff about the project.
+								Lots of Cool stuff about the project. Lots of Cool stuff about the project.
+							</p>
+							<a class='more'>READ MORE <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+						</div>
+
+
+					</div>
+
+
+				</div>
+
+				<div class="col-md-5 col-xs-12 pull-right">
+					<a href="#/allprojects" class="seeall title">SEE ALL PROJECTS <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<script>
+	$(window).scroll(function(){
+
+		if( $(window).scrollTop() >= 700 )
+			$("#projectsContainer").delay(200).animate({'marginTop':"0",'opacity':"1"},0);
+	
+	});
+</script>

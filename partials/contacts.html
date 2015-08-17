@@ -1,0 +1,57 @@
+<style>
+#contactDetails{
+	opacity:0;
+	margin-top:100px;
+}
+</style>
+<div ng-controller="koreController" data-ng-init="initContacts()">
+<div class="blogContainer col-md-12  col-xs-12 paddingReset">
+	<div class="header">
+		<h2>STUDENT DIRECTORS</h2>
+	</div>
+</div>
+<div class="contactContainer col-md-12 col-xs-12 paddingReset" style="background:#eee">
+<div class="contactBox col-md-12 col-xs-12">
+
+<div class="allCircles padleft180">
+<div class="koreCircle  koreAnim {{active}}" id="{{ bucket.bucketname }}" ng-repeat="bucket in bucketCircles" ng-click="showContacts(bucket.bucketname);">
+<i class="{{ bucket.fa }}">
+<p class='bucketTitle raleway caps'>{{ bucket.bucketname }}</p>
+</i>
+</div>
+</div>
+
+<div  id="contactDetails">
+<div class="col-md-12 col-xs-12">
+<h2 class='bucketTitle raleway caps'>{{ bucket }}</h2>
+</div>
+<div class="col-md-12">
+<div class="col-md-4 col-xs-12 ccpad" ng-repeat="contact in contactList">
+	<div class="contactCard">
+		<div class="koreImage"><img src= {{contact.image}}/></div>
+		<div class="koreName">{{contact.name}}</div>
+		<div class="koreTeam">{{contact.team}}</div>
+		<div class="koreDesc">
+			<p>{{contact.desc}}</p>
+			<div class="contactMe">
+			<p class="phone"><i class="fa fa-phone-square"></i>{{contact.phone}}</p>
+			<p class="mail"><i class="fa fa-envelope"></i>{{contact.mail}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>		
+</div>
+</div>
+<script src="js/equalize.min.js"></script>
+<script>
+$(document).ready(function(){
+
+
+$(".contactBox").equalize({children:'.koreName'});
+
+});
+
+</script> 	

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Social Likes</title>
+	<meta name="generator" content="Social Likes: http://sapegin.github.com/social-likes/">
+	<link rel="stylesheet" href="css/social-likes_flat.css">
+</head>
+<body>
+
+<script src="js/jquery.js"></script>
+<script src="js/social-likes.min.js"></script>
+
+<div class="social-likes">
+	<div class="facebook" title="Share link on Facebook">Facebook</div>
+	<div class="twitter" title="Share link on Twitter">Twitter</div>
+	<div class="plusone" title="Share link on Google+">Google+</div>
+	<div class="pinterest" title="Share image on Pinterest" data-media="">Pinterest</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<style>
+.projectsContainer{
+	opacity:0;
+	margin-top:30px;
+}
+</style>
+<div ng-controller="projectsController">
+<div class="container paddingReset"style="
+	background:url(images/patterns/sativa.png) !important;">
+	<div class="header" style="background:url(images/patterns/blue.jpg)">
+			<!-- <h2>PROJECTS</h2> -->
+		</div>
+	<div class="overlay"><h2 class="hover-up">PROJECTS</h2></div>
+<div class="projectsContainer hover-up padleft70 col-md-12 col-xs-12 clearfix" style="min-height:600px; margin-top:-150px">
+
+<h5 class="searchtitle">SEARCH BY TAG <input type="text" class="searchBar" ng-model="filters.tags"/></h5>
+	<div class="col-md-11 col-md-push-1 col-xs-12 hover-up" id="projects">
+			<div class=" projitem col-md-5 col-xs-12 col-lg-5" ng-repeat="item in projItems | filter:filters">
+				<a href='#/project'>
+				<h3 class='title'>{{item.heading}}</h3>
+				<h5 class="date">{{item.pdate}}</h5>
+
+				<div class="col-md-2"><img src="images/blogPic2.png" class="projImg"><!-- <i class="fa fa-calendar fa-4x black"></i> --></div>
+				<div class="col-md-10">
+
+					<p>{{item.descr}}
+					</p>
+					<ul class="tags" ng-repeat="tag in item.tags">
+						<li class="tag"><i class="fa fa-tag"></i> {{tag}}</li>
+					</ul>
+
+					<a class='more col-md-12 col-xs-12'>READ MORE <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+				</div>
+				</a>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+<script>
+
+$(".chevron").css({'background':"url(images/patterns/blue.jpg"});
+$(".overlay").css({'height':"160px",'margin-top':'-50px'});
+$(".overlay h2").css({'padding-top':"80px"});	
+$(window).scrollTop(0);
+</script>

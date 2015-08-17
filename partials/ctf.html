@@ -1,0 +1,177 @@
+<div class="header" style="background:url(images/patterns/blue.jpg)">
+      <!-- <h2>PROJECTS</h2> -->
+</div>
+<div class="overlay"><h2 class="hover-up">CTF</h2></div>
+<div class="blogContainer col-md-12  col-xs-12 paddingReset" style="margin-top:-130px">
+  <div class="bgOverlay" id="about">
+    <div class='col-md-12 col-xs-12' style="
+      background:url(images/ceg.jpg);
+      background-attachment: fixed;
+      width:100%;
+      height:auto;
+      background-size:cover;
+      overflow-x:hidden;
+    ">
+      <div id="demo" >
+        <div class="container paddingReset">
+
+          <div class="col-md-1 col-md-push-1 col-xs-1 navleft"><i class="fa fa-chevron-left"></i></div>
+          <div class="col-md-8 col-md-push-1 col-xs-9">
+              <div id="owl-demo" class="owl-carousel">
+
+                <div class="item">
+                <!--   <h1 class="ctfTitle">CTF</h1> -->
+                  <div class="desc col-md-12 col-xs-12">
+                    <div class="descBox">
+                      <img src="images/ctf.png" style=" width:200px;
+                      height:60px; margin:auto
+                      ">
+                      <p> Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     </p>
+                     <p> Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                       Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     </p>
+                   </div>
+                 </div>
+               </div>
+               <div class="item">
+                 <div class="desc col-md-12 col-xs-12">
+                  <div class="descBox">
+                    <img src="images/ctf.png" style=" width:200px;
+                    height:60px; margin:auto
+                    ">
+                    <p> Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   </p>
+                   <p> Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                     Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   </p>
+                 </div>
+               </div>
+
+             </div>
+             <div class="item">    
+              <div class="desc col-md-12 col-xs-12">
+                <div class="descBox">
+                  <img src="images/ctf.png" style=" width:200px;
+                  height:60px; margin:auto
+                  ">
+                  <p> Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                 </p>
+                 <p> Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                   Some lorem ipsum about ctf  Some lorem ipsum about ctf  Some lorem ipsum about ctf 
+                 </p>
+
+               </div>
+             </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-md-1 col-md-push-1 col-xs-1 navright"><i class="fa fa-chevron-right"></i></div>
+    
+   </div>
+</div>
+<!-- <div class="customNavigation col-md-12 col-xs-12">
+<div class="slide slide1 col-xs-4 "><a>CTF</a></div>
+<div class="slide slide2 col-xs-4"><a>GOALS</a></div>
+<div class="slide slide3 col-xs-4"><a>KURUKSHETRA</a></div>
+</div>
+ -->
+</div>
+</div>
+</div>
+<!-- Demo -->
+
+ <script>
+var owl = $("#owl-demo");
+   
+owl.owlCarousel({
+items : 1, 
+//10 items above 1000px browser width
+ autoPlay:false,
+ autoplayHoverPause:true,
+ loop:true,
+ slideSpeed:800,      
+itemsDesktop : [1000,4], //5 items between 1000px and 901px
+itemsDesktopSmall : [900,1], // betweem 900px and 601px
+itemsTablet: [600,1], //2 items between 600 and 0
+itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+});
+ 
+ titles = ['CTF','GOALS','KURUKSHETRA'];
+ curslide = 0;
+$(".navright").on('click',function(){
+curslide++;
+
+ if( curslide == 3 )
+  curslide = 0;
+owl.trigger('owl.goTo',curslide);
+$(".overlay h2").text(titles[curslide]);
+});
+
+$(".navleft").on('click',function(){
+curslide--;
+
+ if( curslide == -1 )
+  curslide = 2;
+owl.trigger('owl.goTo',curslide);
+$(".overlay h2").text(titles[curslide]);
+});
+
+// Custom Navigation Events
+$(".slide1").on('click',function(){
+owl.trigger('owl.goTo',0);
+$(".tltHead").text("CEG TECH FORUM");
+});
+
+$(".slide2").click(function(){
+$(".tltHead").text("CTF GOALS");
+owl.trigger('owl.goTo',1);
+
+});
+$(".slide3").click(function(){
+owl.trigger('owl.goTo',2);
+$(".tltHead").text("KURUKSHETRA");
+});
+
+  $("#owl-demo").owlCarousel({
+
+    navigation : true,
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem : true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+    });
+
+$(".chevron").css({'background':"url(images/patterns/blue.jpg"});
+                $(".overlay").css({'height':"160px",'margin-top':'-50px'});
+                $(".overlay h2").css({'padding-top':"80px"});  
+</script>
+

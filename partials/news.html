@@ -1,0 +1,39 @@
+<div ng-controller="newsController">
+<div class="container paddingReset"style="
+	background:url(images/patterns/sativa.png) !important; border-top:5px solid #000">
+				<div class="col-md-4 col-xs-4">
+			<div class="left-line"></div>
+			</div>
+
+			<div class="col-md-4  col-xs-12 text-center">
+			<h4 class="sectionTitle text-center" style="border-bottom:10px double #000" id="title2" >NEWS</h4>	
+			</div>		
+
+<div class="col-md-12 col-xs-12 clearfix">
+				<div id="news">
+					<div class="newscard col-md-2 col-md-push-1 col-xs-12" ng-repeat="card in newsItems">
+						<p class="newsdate">{{card.news_date}}</p>
+						<p class="caps raleway">{{card.desc}}
+						</p>
+						<p><i class="fa fa-facebook">{{card.fb_link}}</i> </p>
+					</div>
+				</div>
+			</div><!--newsContainer-->
+<div class="row" style="
+	background:url(images/patterns/sativa.png);">
+ <div class="pagination col-md-3 col-md-push-5 col-xs-push-2 col-xs-12">
+              <ul>
+                <li ng-class="prevPageDisabled()">
+                  <a href ng-click="prevPage()"><i class="fa fa-angle-left"></i> Prev</a>
+                </li>
+                 <li ng-repeat="n in range()">
+                  <a href ng-click="setPage($event,n)" class="navnos" id="{{n}}">{{n+1}}</a>
+                </li>
+                <li ng-class="nextPageDisabled()">
+                  <a href ng-click="nextPage()">Next <i class="fa fa-angle-right"></i></a>
+                </li>
+              </ul>
+  </div>
+</div>
+</div>
+</div>
