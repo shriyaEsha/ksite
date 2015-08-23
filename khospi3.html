@@ -4,17 +4,63 @@
 <link href="ksite.css" rel="stylesheet">
 <link href="fontawesome/css/font-awesome.min.css" rel="stylesheet">
 <!--clickfx-->
-<link rel="stylesheet" type="text/css" href="css/clickfx/default.css" />
-<link rel="stylesheet" type="text/css" href="css/clickfx/component.css" />
+     <link rel="stylesheet" type="text/css" href="css/clickfx/component.css" />
+     <link rel="stylesheet" type="text/css" href="css/clickfx/demo.css" />
 
-<script src="js/clickfx/modernizr.custom.js"></script>
+     <script src="js/tabs/modernizr.custom.js"></script>
+     <script src="js/clickfx/modernizr.custom.js"></script>
+
+
 
 <script src="js/clickfx/classie.js"></script>
-
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 
+
+<style>
+body{
+  overflow-x:hidden !important;
+  width:100%;
+  height:100%;
+}
+.node{
+  width:65px;
+  height:65px;
+  background:crimson;
+  border-radius:50%;
+  cursor:pointer;
+  margin-bottom:50px;
+
+}
+.left-line, .right-line{
+  margin-top:30px;
+}
+.left-line{
+  position: relative;
+  width:100%;
+  height:5px;
+  background:crimson;
+  margin-left:30px;
+}
+.right-line{
+  position: relative;
+  width:100%;
+  height:5px;
+  background:crimson;
+  margin-right:40px;
+}
+.node .btmText{
+  margin-top:20px;
+  font-size:13px;
+  margin-left:-15px;
+}
+.node .hospi_icon{
+  font-size:30px;
+  margin-left:42%;
+  margin-top:28%;
+}
+</style>
 <!--navbar-->
 
 <div class="col-md-12 headerBox hidden-xs hidden-sm">
@@ -269,45 +315,80 @@
 
 <!--put components here -->
 <div class="col-md-12 col-xs-12">
-  <ul class="long-line col-md-12 col-xs-12 paddingReset clearfix">
-    <div class="longer-line col-md-12 col-xs-12 clearfix"></div>
-    <div class="col-md-2 col-xs-6">
-      <div class="node" id="intro">
-        <i class="fa fa-info hospi_icon"></i>
+  
+    <div class="col-md-1 col-xs-1">
+        <div class="left-line pull-left"></div>
+    </div>
+    <div class="col-md-1 col-xs-4">
+        <div class="node">
+          <i class="fa fa-info hospi_icon"></i>
         <h4 class="btmText left15">INTRODUCTION</h4>
+        </div>
     </div>
-  </div>
-  <div class="col-md-2 col-xs-6">
-      <div class="node" id="instr">
-        <i class="fa fa-file hospi_icon"></i>
-        <h4 class="btmText left15">INSTRUCTIONS</h4>
+    <div class="col-md-1 col-xs-1">
+        <div class="right-line pull-right"></div>
     </div>
-  </div>
-  <div class="col-md-2 col-xs-6">
-      <div class="node" id="accom">
-        <i class="fa fa-suitcase hospi_icon"></i>
-        <h4 class="btmText left15">ACCOMODATION</h4>
+    <div class="col-md-1 col-xs-1">
+        <div class="left-line pull-left"></div>
     </div>
-  </div>
-  <div class="col-md-2 col-xs-6">
-      <div class="node" id="reachceg">
-        <i class="fa fa-map-marker hospi_icon"></i>
-        <h4 class="btmText">REACHING CEG</h4>
+    <div class="col-md-1 col-xs-4">
+        <div class="node">
+          <i class="fa fa-info hospi_icon"></i>
+        <h4 class="btmText left15">INTRODUCTION</h4>
+        </div>
     </div>
-  </div>
-  <div class="col-md-2 col-xs-6">
-      <div class="node" id="faq">
-        <i class="fa fa-question hospi_icon"></i>
-        <h4 class="btmText">FAQ</h4>
+    <div class="col-md-1 col-xs-1">
+        <div class="right-line pull-right"></div>
     </div>
-  </div>
-  <div class="col-md-2 col-xs-6">
-      <div class="node" id="contact">
-        <i class="fa fa-mobile hospi_icon"></i>
-        <h4 class="btmText">CONTACT</h4>
+    <div class="col-md-1 col-xs-1">
+        <div class="left-line pull-left"></div>
     </div>
-  </div>
-  </ul>
+    <div class="col-md-1 col-xs-4">
+        <div class="node">
+          <i class="fa fa-info hospi_icon"></i>
+        <h4 class="btmText left15">INTRODUCTION</h4>
+        </div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="right-line pull-right"></div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="left-line pull-left"></div>
+    </div>
+    <div class="col-md-1 col-xs-4">
+        <div class="node">
+          <i class="fa fa-info hospi_icon"></i>
+        <h4 class="btmText left15">INTRODUCTION</h4>
+        </div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="right-line pull-right"></div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="left-line pull-left"></div>
+    </div>
+    <div class="col-md-1 col-xs-4">
+        <div class="node">
+          <i class="fa fa-info hospi_icon"></i>
+        <h4 class="btmText left15">INTRODUCTION</h4>
+        </div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="right-line pull-right"></div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="left-line pull-left"></div>
+    </div>
+    <div class="col-md-1 col-xs-4">
+        <div class="node">
+          <i class="fa fa-info hospi_icon"></i>
+        <h4 class="btmText left15">INTRODUCTION</h4>
+        </div>
+    </div>
+    <div class="col-md-1 col-xs-1">
+        <div class="right-line pull-right"></div>
+    </div>
+  
 </div>
 
 <!--hospi_content -->
@@ -358,44 +439,12 @@
 
 <script>
 $(document).ready(function(){
-
 $(".navbar-toggle").click(function(){
   closeall();
   
 });
-
-$(".node").click(function(){
-
-//scroll down in mobile
-if($(window).width()>=320 && $(window).width()<=960)
-  $('html,body').animate({'scrollTop':"450px"},800);
-else
-  $('html,body').animate({'scrollTop':"200px"},800);
-
-  $(".node").removeClass("node-active");
-  $(this).addClass("node-active");
-  $(".hospi_content").removeClass("hospi_animated");
-
-  var nodeid = $(this).attr("id");
-  if(nodeid == 'intro')
-  $(".longer-line").css({'background':"lime",'width':"8%"});
-  else if(nodeid == 'instr')
-  $(".longer-line").css({'background':"lime",'width':"25%"});
-  else if(nodeid == 'accom')
-  $(".longer-line").css({'background':"lime",'width':"40%"});
-  else if(nodeid == 'reachceg')
-  $(".longer-line").css({'background':"lime",'width':"59%"});
-  else if(nodeid == 'faq')
-  $(".longer-line").css({'background':"lime",'width':"75%"});
-  else if(nodeid == 'contact')
-  $(".longer-line").css({'background':"lime",'width':"100%"});
-
-$(".hospi_content").addClass("hospi_animated");
-
 });
-
-});
-
+  
 </script>
 
 <!--navbar script-->

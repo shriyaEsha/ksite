@@ -1,0 +1,849 @@
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="ksite.css" rel="stylesheet">
+<link href="fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,200,100,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<style>
+body{
+  font-family: 'Open Sans', arial, sans-serif;
+  background:rgb(123, 158, 158);
+
+}
+*{
+  margin:0;
+  padding:0;
+}
+#categories{
+  overflow:hidden;
+  width:90%;
+  margin:0 auto;
+  margin-top:100px;
+}
+.clr:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+#categories li{
+  position:relative;
+  list-style-type:none;
+  float:left;
+  overflow:hidden;
+  visibility:hidden;
+  transform: rotate(-60deg) skewY(30deg);
+}
+#categories li *{
+  position:absolute;
+  visibility:visible;
+}
+#categories li > div{
+  width:100%;
+  height:100%;
+  text-align:center;
+  color:#fff;
+  overflow:hidden;
+  transform: skewY(-30deg) rotate(60deg);  
+  backface-visibility:hidden;
+  
+}
+
+/* HEX CONTENT */
+#categories li img{
+  left:-100%; right:-100%;
+  width: auto; height:100%;
+  margin:0 auto;   
+}
+
+#categories div h1, #categories div p{
+  width:90%;
+  padding:0 5%;
+  background-color:#008080; background-color: rgba(0, 128, 128, 0.8);
+  font-family: 'Raleway', sans-serif;
+  transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
+}
+#categories li h1{
+  bottom:110%;
+  font-style:italic;
+  font-weight:normal;
+  font-size:1.5em;
+  padding-top:100%;
+  padding-bottom:100%;
+}
+#categories li h1:after{
+  content:'';
+  display:block;
+  position:absolute;
+  bottom:-1px; left:45%;
+  width:10%;
+  text-align:center;
+  z-index:1;
+  border-bottom:2px solid #fff;
+}
+#categories li p{
+  padding-top:50%;
+  top:110%;
+  padding-bottom:50%;
+}
+
+
+/* HOVER EFFECT  */
+
+#categories li div:hover h1 {
+  bottom:50%;
+  padding-bottom:10%;
+}
+
+#categories li div:hover p{
+  top:50%;
+  padding-top:10%;
+}
+@media (min-width:1201px) {
+  #categories li{
+    width:17.364%; /* = (100-4.5) / 5.5 */
+    padding-bottom: 20.05%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(10n+6), #categories li:nth-child(10n+7), #categories li:nth-child(10n+8), #categories li:nth-child(10n+9), #categories li:nth-child(10n+10) {
+    margin-top: -4.2%;
+    margin-bottom: -4.2%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(10n+6):last-child, #categories li:nth-child(10n+7):last-child, #categories li:nth-child(10n+8):last-child, #categories li:nth-child(10n+9):last-child, #categories li:nth-child(10n+10):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(10n+6){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(5n+2) {
+    margin-left:1%;
+    margin-right:1%;
+  }
+  #categories li:nth-child(5n+3),#categories li:nth-child(5n+4){
+    margin-right:1%;
+  }
+}
+
+
+@media (max-width: 1200px) and (min-width:901px) {
+  #categories li{
+    width:21.444%; /* = (100-3.5) / 4.5 */
+    padding-bottom: 24.763%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(8n+5), #categories li:nth-child(8n+6), #categories li:nth-child(8n+7), #categories li:nth-child(8n+8) {
+    margin-top: -5.298%;
+    margin-bottom: -5.298%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(8n+5):last-child, #categories li:nth-child(8n+6):last-child, #categories li:nth-child(8n+7):last-child, #categories li:nth-child(8n+8):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(8n+5){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(4n+2) {
+    margin-left:1%;
+    margin-right:1%;
+  }
+  #categories li:nth-child(4n+3){
+    margin-right:1%;
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) {
+  #categories li{
+    width:27.857%; /* = (100-2.5) / 3.5 */
+    padding-bottom: 32.168%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(6n+4), #categories li:nth-child(6n+5), #categories li:nth-child(6n+6) {
+    margin-top: -7.322%;
+    margin-bottom: -7.322%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(6n+4):last-child, #categories li:nth-child(6n+5):last-child, #categories li:nth-child(6n+6):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(6n+4){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(3n+2) {
+    margin-left:1%;
+    margin-right:1%;
+  }
+}
+@media (max-width: 600px) {
+  #categories li{
+    width:39.4%; /* = (100-1.5) / 2.5 */
+    padding-bottom: 45.496%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(4n+3), #categories li:nth-child(4n+4){
+    margin-top: -10.392%;
+    margin-bottom: -10.392%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(4n+3):last-child, #categories li:nth-child(4n+4):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(4n+3){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(2n+2) {
+    margin-left:1%;
+  }
+}
+
+</style>
+<!--navbar-->
+
+<div class="col-md-12 headerBox hidden-xs hidden-sm">
+<div class="col-md-4 ">
+<img src="images/ceg_desc.png" class="headerPics" id="ceg"/>
+</div>
+<div class="col-md-4">
+<img src="images/k.png" class="headerPics" id="k"/>
+</div>
+<div class="col-md-4 col-md-push-3">
+<img src="images/unesco.png" class="headerPics" id="unesco"/>
+</div>
+</div>
+<div class="bg">
+<div class="overlay">
+
+  <nav class="navbar" >
+    <div class="container-fluid paddingReset">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <div class="sr-only">Toggle navigation</div>
+          <div class="icon-bar top-bar"></div>
+          <div class="icon-bar middle-bar"></div>
+          <div class="icon-bar bottom-bar"></div>
+        </button>
+       <!-- <a class="navbar-brand" href="#">
+         <img id="ctf-logo" style="background:url(images/gplay.png); background-color:white;width:" alt="ctf-logo" class="text-center" src="images/k.png">
+         
+       </a> -->
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="width:105% !important">
+         <li>
+          <a class="text">HOME</a>
+          <div class="topVane">
+            <i class="fa fa-home"></i>
+          </div>
+         </li>
+          <li id="eventsNav" class="hidden-xs">
+          <a class="text">EVENTS</a>
+          <div class="topVane">
+            <i class="fa fa-bullhorn"></i>
+          </div>
+         </li>
+         <li class="eventdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <div class="caret"></div></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">Engineering</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <div class="sideText">Robotics</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-laptop"></i>
+                            <div class="sideText">Online</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-terminal"></i>
+                            <div class="sideText">Coding</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-money"></i>
+                            <div class="sideText">Management</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <div class="sideText">General</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-puzzle-piece"></i>
+                            <div class="sideText">Quizzes</div>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li id="wkshopsNav" class='hidden-xs'>
+          <a class="text">WORKSHOPS</a>
+          <div class="topVane">
+            <i class="fa fa-wrench"></i>
+          </div>
+         </li>
+
+         <li class="wkshopdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORKSHOPS <div class="caret"></div></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">Engineering</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <div class="sideText">Robotics</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-inr"></i>
+                            <div class="sideText">Management</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <div class="sideText">General</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-university"></i>
+                            <div class="sideText">School</div>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li>
+          <a class="text">XCEED</a>
+          <div class="topVane">
+            <i class="fa fa-bus"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">SPONSORS</a>
+          <div class="topVane">
+            <i class="fa fa-inr"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text" style="line-height:0.9">GUEST LECTURES</a>
+          <div class="topVane">
+            <i class="fa fa-microphone"></i>
+          </div>
+         </li>
+
+         <li class="">
+          <a class="text">K!ARNIVAL</a>
+          <div class="topVane">
+            <i class="fa fa-flag"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">HOSPITALITY</a>
+          <div class="topVane">
+            <i class="fa fa-truck"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">ABOUT US</a>
+          <div class="topVane">
+            <i class="fa fa-angellist"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">CONTACT</a>
+          <div class="topVane">
+            <i class="fa fa-comments-o"></i>
+          </div>
+         </li>
+         <li id="loginNav" class="smalleritem hidden-xs">
+          <a class="text">LOGIN</a>
+          <div class="topVane">
+            <i class="fa fa-lock"></i>
+          </div>
+         </li>
+         <li class="logindrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN <div class="caret"></div></a>
+          <ul class="dropdown-menu loginNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">K!</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-facebook"></i>
+                <div class="sideText">FACEBOOK</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-google"></i>
+                <div class="sideText">Google+</div>
+                </a>
+              </li>
+         </ul><!-- 
+         <li class="searchInput">
+            <form>
+            <div class="col-md-2 col-xs-61 text-center">
+              <input type="text" id="searchdata" />
+            </div>
+            <div class="col-md-2 col-xs-6">
+              <a class="submitsearch"><i class="fa fa-search fa-2x fa-fw"></i></a>
+            </div>
+            </form>
+         </li> -->
+       </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ <div class="col-md-12 col-xs-12 eventHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-3">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">Engineering</div>
+            </li>
+           <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-laptop"></i>
+              <div class="btmText">Online</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-terminal"></i>
+              <div class="btmText">Coding</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-binoculars"></i>
+              <div class="btmText">Quizzes</div>
+            </li>
+          </ul>
+</div>
+
+ <div class="col-md-12 col-xs-12 wkshopHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="wkshopCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><i class="fa fa-gear"></i>
+                <div class="btmText">Engineering</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+           
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-university"></i>
+              <div class="btmText">School</div>
+            </li>
+          </ul>
+</div>
+
+<!--login header -->
+<div class="col-md-12 col-xs-12 loginHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">K! Login</div>
+            </li>
+           <li class="eventCircle" style="margin-left:25px"><i class="fa fa-facebook"></i>
+              <div class="btmText">Facebook Login</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-google"></i>
+              <div class="btmText">Google+ Login</div>
+            </li>
+          </ul>
+</div>
+<!--navbar ends -->
+
+
+
+<ul id="categories" class="clr">
+  <li>
+    <div>
+      <img src="https://farm3.staticflickr.com/2878/10944255073_973d2cd25c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm5.staticflickr.com/4144/5053682635_b348b24698.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6139/5986939269_10721b8017.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3165/5733278274_2626612c70.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7163/6822904141_50277565c3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3771/13199704015_72aa535bd7.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm3.staticflickr.com/2878/10944255073_973d2cd25c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm5.staticflickr.com/4144/5053682635_b348b24698.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm3.staticflickr.com/2878/10944255073_973d2cd25c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm5.staticflickr.com/4144/5053682635_b348b24698.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6139/5986939269_10721b8017.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3165/5733278274_2626612c70.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7163/6822904141_50277565c3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3771/13199704015_72aa535bd7.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6139/5986939269_10721b8017.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3165/5733278274_2626612c70.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7163/6822904141_50277565c3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm4.staticflickr.com/3771/13199704015_72aa535bd7.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </div>
+  </li>
+</ul>
+
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  closeall();
+  
+});
+});
+  
+</script>
+
+<!--navbar script-->
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  $(".top-bar").toggleClass("top-bar-anim");
+  $(".middle-bar").toggleClass("middle-bar-anim");
+  $(".bottom-bar").toggleClass("bottom-bar-anim");
+});
+
+
+if( $(window).width() >= 600)
+{
+  $(".eventHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+  $(".loginHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+
+  $("#eventsNav").hover(function(){
+  $(".eventHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+  $("#loginNav").hover(function(){
+  $(".loginHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+
+  $(".navbar-nav li").hover(function(){
+    if($(this).attr("id") != "eventsNav" )
+  {
+  $(".eventHeader").animate({'opacity':"0"});
+  $(".eventHeader").fadeOut().finish();
+  }
+    if($(this).attr("id") != "wkshopsNav" )
+  {
+  $(".wkshopHeader").animate({'opacity':"0"});
+  $(".wkshopHeader").fadeOut().finish();
+  }
+
+    if($(this).attr("id") != "loginNav" )
+  {
+  $(".loginHeader").animate({'opacity':"0"});
+  $(".loginHeader").fadeOut().finish();
+  }
+  });
+
+  $(".eventHeader").hover(function(){
+  }, function(){
+   $(".eventHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".wkshopHeader").hover(function(){
+  }, function(){
+   $(".wkshopHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".loginHeader").hover(function(){
+  }, function(){
+   $(".loginHeader").animate({'opacity':"0"}).fadeOut();
+  });
+  
+  $(".wkshopHeader").animate({'opacity':"0"}).fadeOut().finish();
+  $("#wkshopsNav").hover(function(){
+    $(".wkshopHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+}
+
+});
+</script>

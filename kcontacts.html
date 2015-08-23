@@ -12,26 +12,108 @@ body{
   width:100%;
   height:100%;
 }
-.korecircle{
-  cursor: pointer;
-  margin-bottom:20px;
+.margin-top-lg{
+  margin-top:50px;
 }
-.korecircle .circletext{
-  width:80px;
-  height:80px;
-  background:seagreen;
-  border-radius:50%;
+ul{
+  list-style: none;
+}
+.bucketCircle{
+  float: left;
+  display: inline-block;
+  width:150px;
+  height:150px;
+  background:url(images/red_light.jpg);
+  padding:20px;
   text-align: center;
-  line-height:11;
-  margin-bottom:30px;
+  margin:50px;
+  vertical-align: middle;
+  border-radius:50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 10px rgba(255,255,255,0.45),
+              -3px -3px 15px rgba(255,255,255,0.08),
+              3px -3px 15px rgba(255,255,255,0.08),
+              -3px 3px 15px rgba(255,255,255,0.08),
+              3px 3px 15px rgba(255,255,255,0.08);
+-moz-transition:all 0.4s;
+-webkit-transition:all 0.4s;
+ transition:all 0.4s;
+
+}
+.bucketCircle .bucketName{
+  margin-top:40%;
+  line-height:1.6;
   color:#fff;
-  border:3px solid #fff;
+  font-weight: 600;
+  font-family: 'Roboto',sans-serif;
 }
-.contactContainer{
-  padding-left:100px;
+.left{
+  top:0;
+  position:absolute;
+  width:100%;
+  height:auto;
+  margin-top:53px;
+  margin-left:100%;
+    }
+.left h1{
+  text-align: center;
+  }
+.close{
+  cursor: pointer;
+  color:#fff;
 }
-.left10{
-  margin-right:10px;
+.close:hover{
+  color:#fff;
+}
+.popOut, .popOutFast{
+  -webkit-animation:scaleDown 0.25s ease-in-out forwards;
+  -moz-animation:scaleDown 0.25s ease-in-out forwards;
+  animation:scaleDown 0.25s ease-in-out forwards;
+  visibility: hidden;
+  pointer-events:none;
+  -moz-transition:all 0.4s;
+  -webkit-transition:all 0.4s;
+  transition:all 0.4s;
+}
+.popOutFast{
+  -webkit-animation:scaleDown 0.05s ease-in-out forwards;
+  -moz-animation:scaleDown 0.05s ease-in-out forwards;
+  animation:scaleDown 0.05s ease-in-out forwards;
+  -moz-transition:all 0.1s;
+  -webkit-transition:all 0.1s;
+  transition:all 0.1s;
+  
+}
+@-webkit-keyframes scaleDown{
+  0%{transform:scale(1.1);}
+  7%{transform:scale(1.2);}
+  14%{transform:scale(1);}
+  21%{transform:scale(0.9);}
+  28%{transform:scale(0.8);}
+  35%{transform:scale(0.7);}
+  42%{transform:scale(0.6);}
+  49%{transform:scale(0.5);}
+  56%{transform:scale(0.4);}
+  77%{transform:scale(0.3);}
+  84%{transform:scale(0.2);}
+  91%{transform:scale(0.1);}
+  100%{transform:scale(0);}
+}
+
+@keyframes scaleDown{
+  0%{transform:scale(1.1);}
+  7%{transform:scale(1.2);}
+  14%{transform:scale(1);}
+  21%{transform:scale(0.9);}
+  28%{transform:scale(0.8);}
+  35%{transform:scale(0.7);}
+  42%{transform:scale(0.6);}
+  49%{transform:scale(0.5);}
+  56%{transform:scale(0.4);}
+  77%{transform:scale(0.3);}
+  84%{transform:scale(0.2);}
+  91%{transform:scale(0.1);}
+  100%{transform:scale(0);}
 }
 </style>
 <!--navbar-->
@@ -212,10 +294,10 @@ body{
          </ul><!-- 
          <li class="searchInput">
             <form>
-            <div class="col-md-2 col-xs-61 text-center">
+            <div class="col-md-4 col-xs-61 text-center">
               <input type="text" id="searchdata" />
             </div>
-            <div class="col-md-2 col-xs-6">
+            <div class="col-md-4 col-xs-6">
               <a class="submitsearch"><i class="fa fa-search fa-2x fa-fw"></i></a>
             </div>
             </form>
@@ -288,51 +370,64 @@ body{
 
 <!--put components here -->
 <div class="col-md-12 col-xs-12">
-<div class="container paddingReset contactContainer">
-  <div class="row">
-    <div class="korecircle big col-md-2 col-md-push-5">
-      <h4 class="circletext">CTF</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="korecircle big col-md-2 col-md-push-4">
-      <h4 class="circletext">HR</h4>
-    </div>
-    <div class="korecircle big col-md-2 col-md-push-4">
-      <h4 class="circletext">IR</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="korecircle big col-md-2 col-md-push-3">
-      <h4 class="circletext">EVENTS</h4>
-    </div>
-    <div class="korecircle big col-md-2 col-md-push-3">
-      <h4 class="circletext left10" style="margin-left:10px">TECH</h4>
-    </div>
-    <div class="korecircle big col-md-2 col-md-push-3">
-      <h4 class="circletext">MEDIA</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="korecircle big col-md-2 col-md-push-2">
-      <h4 class="circletext">FINANCE</h4>
-    </div>
-    <div class="korecircle big col-md-2 col-md-push-3">
-      <h4 class="circletext  left10" style="margin-left:10px">PROJECTS</h4>
-    </div>
-    <div class="korecircle big col-md-2 col-md-push-4">
-      <h4 class="circletext">OPERATIONS</h4>
-    </div>
-  </div>
-  <div class="row">
+<ul class="container col-md-12 col-xs-12 clearfix paddingReset bucketContainer">
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">INDUSTRY RELATIONS </h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">EVENTS</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">GUEST LECTURES</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">XCEED</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">KARNIVAL</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">WORKSHOPS</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">HOSPITALITY</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">LOGISTICS</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">MEDIA</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">CREATIVITY</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">DESIGN</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">TECH</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">PROJECTS</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">HR</h5>
+  </li>
+  <li class="bucketCircle col-md-4 col-xs-6">
+    <h5 class="bucketName">FINANCE</h5>
+  </li>
+</ul>
+</div>
 
-    <div class="korecircle big col-md-2 col-md-push-5">
-      <h4 class="circletext left10" style="margin-left:10px">CREATIVITY</h4>
-    </div>
+<div class="left col-md-12 col-xs-12" style="background:rgba(0,0,0,0.85); padding-bottom:40px">
+  <div class="desc margin-top-lg">
+      <i class="close fa fa-times fa-2x fa-fw" style="color:#fff;"></i>
+
+      <p>Gallery Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque tenetur aut, cupiditate, libero eius rerum incidunt dolorem quo in officia.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa vero, culpa doloremque voluptatum consectetur mollitia, atque expedita unde excepturi id, molestias maiores delectus quos molestiae. Ab iure provident adipisci eveniet quisquam ratione libero nam inventore error pariatur optio facilis assumenda sint atque cumque, omnis perspiciatis. Maxime minus quam voluptatum provident aliquam voluptatibus vel rerum. Soluta nulla tempora aspernatur maiores! Animi accusamus officiis neque exercitationem dolore ipsum maiores delectus asperiores reprehenderit pariatur placeat, quaerat sed illum optio qui enim odio temporibus, nulla nihil nemo quod dicta consectetur obcaecati vel. Perspiciatis animi corrupti quidem fugit deleniti, atque mollitia labore excepturi ut.</p>
   </div>
 </div>
-</div>
-
 
 
 </div>
@@ -351,6 +446,39 @@ $(".navbar-toggle").click(function(){
   closeall();
   
 });
+
+$(".bucketCircle").click(function(){
+    
+    popOut($(this));
+    $(".left").delay(800).animate({'marginLeft':"0px"},800,'easeOutSine');
+  });
+$(".close").click(function(){
+  closeall();
+});
+
+function popOut(thisele){
+  $(thisele).addClass("popOutFast");
+  $(".bucketCircle").each(function(i){
+      var ele = $(this);
+      setTimeout(function(){ if(!$(ele).hasClass("popOut")) $(ele).addClass("popOut"); }, i*75);
+  });
+$("html,body").delay(800).animate({'scrollTop':"20px"},1000);
+}
+function popIn(){
+
+  $(".bucketCircle").each(function(i){
+      var ele = $(this);
+      setTimeout(function(){ $(ele).removeClass("popOut").removeClass("popOutFast");
+       }, i*70);
+  });
+}
+
+function closeall(){
+    $(".left").animate({'marginLeft':"100%"},1000,'easeOutElastic');
+    popIn();
+}
+
+
 });
   
 </script>

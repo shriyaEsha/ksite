@@ -6,9 +6,9 @@
 <!--tab styles -->
 
   
-<link rel="stylesheet" href="css/tabs/style.css"> <!-- Resource style -->
-<script src="js/tabs/modernizr.js"></script> <!-- Modernizr -->
-    <!--clickfx-->
+     <link rel="stylesheet" type="text/css" href="css/tabs/tabstyles.css" />
+     <script src="js/tabs/modernizr.custom.js"></script>
+<!--clickfx-->
      <link rel="stylesheet" type="text/css" href="css/clickfx/component.css" />
      <link rel="stylesheet" type="text/css" href="css/clickfx/demo.css" />
 
@@ -19,9 +19,10 @@
 
 <script src="js/clickfx/classie.js"></script>
 <script src="js/jquery.js"></script>
-<script src="js/tabs/main.js"></script>
+<script src="js/tabs/tabs.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
+<script src="js/flipping-text.min.js"></script>
 
 
 <style>
@@ -36,8 +37,10 @@ body{
 	position:absolute;
 	width:100%;
 	height:auto;
-	margin-top:53px;
-    }
+	background:orangered;
+  margin-top:53px;
+  border:2px solid #000;
+  }
 .left{
 	margin-left:100%;
 
@@ -52,59 +55,36 @@ body{
 }
 .close{
 	cursor: pointer;
-  color:#fff;
 }
-.close:hover{
-  color:#fff;
-}
-.imagebox{
-  width:100%;
-  height:450px;
-  background:#fff;
-  margin-bottom:20px;
-  cursor: pointer;
-  box-shadow:0px 8px 10px rgba(0,0,0,0.4);
-  -webkit-transition:all 0.5s;
-  -moz-transition:all 0.5s;
-  transition:all 0.5s;
-  color:#333;
-}
-.imagebox p{
-  padding:10px;
-  font-size: 14px;
-  line-height: 1.6;
-  text-align:center;
-}
-.imagebox .icon{
-  margin:auto;
-  font-size:35px;
-  display:block;
-
-}
-
-
-.imagebox .title{
-  font-size: 14px;
-	background:#fff;
-	padding:10px;
-	text-align: center;
-	top:0px;
-	position:absolute;
+.imageboxl,
+.imageboxt,
+.imageboxr{
+	width:100%;
+	height:100%;
+	position:relative;
+	margin-bottom:20px;
+	cursor: pointer;
+	box-shadow:0px 8px 10px rgba(0,0,0,0.4);
 	-webkit-transition:all 0.5s;
 	-moz-transition:all 0.5s;
 	transition:all 0.5s;
-  width:93%;
 }
-.imagebox .title::after{
-  position:absolute;
-  bottom:-11px;
-  right:0;
-  border-right:12px solid transparent;
-  border-top:12px solid orangered;
-}
-.imagebox img{
+
+.imageboxl .title,.imageboxr .title,.imageboxt .title{
 	width:100%;
-	height:200px;
+	background:#fff;
+	padding:10px;
+	text-align: center;
+	bottom:300px;
+	position:absolute;
+	opacity:0;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	transition:all 0.5s;
+}
+.imageboxl img,.imageboxr img,.imageboxt img{
+	width:100%;
+	height:100%;
 }
 .imageboxl:hover, .imageboxr:hover{
   box-shadow:5px 2px 5px rgba(255,255,255,0.06),
@@ -130,9 +110,12 @@ body{
 	color:#fff;
 	font-family:'Roboto',sans-serif;
 }
-</style>
-<!--navbar-->
+.imageboxl:hover .title,.imageboxr:hover .title,.imageboxt:hover .title{
+	bottom:0;
+	opacity:1;
+}
 
+</style>
 <!--navbar-->
 
 <div class="col-md-12 headerBox hidden-xs hidden-sm">
@@ -142,7 +125,7 @@ body{
 <div class="col-md-4">
 <img src="images/k.png" class="headerPics" id="k"/>
 </div>
-<div class="col-md-4 col-md-push-3">
+<div class="col-md-4 col-md-push-1">
 <img src="images/unesco.png" class="headerPics" id="unesco"/>
 </div>
 </div>
@@ -154,13 +137,13 @@ body{
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <div class="sr-only">Toggle navigation</div>
-          <div class="icon-bar top-bar"></div>
-          <div class="icon-bar middle-bar"></div>
-          <div class="icon-bar bottom-bar"></div>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
         </button>
        <!-- <a class="navbar-brand" href="#">
-         <img id="ctf-logo" style="background:url(images/gplay.png); background-color:white;width:" alt="ctf-logo" class="text-center" src="images/k.png">
+         <img id="ctf-logo" style="background:url(images/gplay.png); background-color:white;width:" alt="ctf-logo" class="pull-left" src="images/k.png">
          
        </a> -->
     </div>
@@ -180,34 +163,34 @@ body{
           </div>
          </li>
          <li class="eventdrop dropdown hidden-md hidden-lg hidden-sm">
-          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <div class="caret"></div></a>
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <span class="caret"></span></a>
           <ul class="dropdown-menu eventsNavElem">
             <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
-                <div class="sideText">Engineering</div>
+                <span class="sideText">Engineering</span>
                 </a>
               </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
-                            <div class="sideText">Robotics</div>
+                            <span class="sideText">Robotics</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-laptop"></i>
-                            <div class="sideText">Online</div>
+                            <span class="sideText">Online</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-terminal"></i>
-                            <div class="sideText">Coding</div>
+                            <span class="sideText">Coding</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-money"></i>
-                            <div class="sideText">Management</div>
+                            <span class="sideText">Management</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
-                            <div class="sideText">General</div>
+                            <span class="sideText">General</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-puzzle-piece"></i>
-                            <div class="sideText">Quizzes</div>
+                            <span class="sideText">Quizzes</span>
             </a>
                           </li>
           </ul>
@@ -220,26 +203,26 @@ body{
          </li>
 
          <li class="wkshopdrop dropdown hidden-md hidden-lg hidden-sm">
-          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORKSHOPS <div class="caret"></div></a>
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORKSHOPS <span class="caret"></span></a>
           <ul class="dropdown-menu eventsNavElem">
             <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
-                <div class="sideText">Engineering</div>
+                <span class="sideText">Engineering</span>
                 </a>
               </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
-                            <div class="sideText">Robotics</div>
+                            <span class="sideText">Robotics</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-inr"></i>
-                            <div class="sideText">Management</div>
+                            <span class="sideText">Management</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
-                            <div class="sideText">General</div>
+                            <span class="sideText">General</span>
                             </a>
                           </li>
             <li class="eventCircleNav"><a href="#"><i class="fa fa-university"></i>
-                            <div class="sideText">School</div>
+                            <span class="sideText">School</span>
             </a>
                           </li>
           </ul>
@@ -287,39 +270,24 @@ body{
             <i class="fa fa-comments-o"></i>
           </div>
          </li>
-         <li id="loginNav" class="smalleritem hidden-xs">
-          <a class="text">LOGIN</a>
+         <li class="smalleritem">
+          <a class="text">LOGIN on FB</a>
+          <div class="topVane">
+            <i class="fa fa-facebook"></i>
+          </div>
+         </li>
+         <li class="smalleritem">
+          <a class="text">LOGIN on G+</a>
+          <div class="topVane">
+            <i class="fa fa-google"></i>
+          </div>
+         </li>
+         <li class="smalleritem">
+          <a class="text">LOGIN on K!</a>
           <div class="topVane">
             <i class="fa fa-lock"></i>
           </div>
          </li>
-         <li class="logindrop dropdown hidden-md hidden-lg hidden-sm">
-          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN <div class="caret"></div></a>
-          <ul class="dropdown-menu loginNavElem">
-            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
-                <div class="sideText">K!</div>
-                </a>
-              </li>
-            <li class="eventCircleNav"><a href="#"><i class="fa fa-facebook"></i>
-                <div class="sideText">FACEBOOK</div>
-                </a>
-              </li>
-            <li class="eventCircleNav"><a href="#"><i class="fa fa-google"></i>
-                <div class="sideText">Google+</div>
-                </a>
-              </li>
-         </ul><!-- 
-         <li class="searchInput">
-            <form>
-            <div class="col-md-2 col-xs-61 text-center">
-              <input type="text" id="searchdata" />
-            </div>
-            <div class="col-md-2 col-xs-6">
-              <a class="submitsearch"><i class="fa fa-search fa-2x fa-fw"></i></a>
-            </div>
-            </form>
-         </li> -->
-       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -370,61 +338,33 @@ body{
           </ul>
 </div>
 
-<!--login header -->
-<div class="col-md-12 col-xs-12 loginHeader" style="background:url(images/patterns/sativa.png)">
- <ul class="eventCats col-md-12 col-xs-12 col-md-push-4">
-            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
-                <div class="btmText">K! Login</div>
-            </li>
-           <li class="eventCircle" style="margin-left:25px"><i class="fa fa-facebook"></i>
-              <div class="btmText">Facebook Login</div>
-            </li>
-            <li class="eventCircle"><i class="fa fa-google"></i>
-              <div class="btmText">Google+ Login</div>
-            </li>
-          </ul>
-</div>
-
 <!--image boxes start -->
-<h2 class="ribbontitle text-center">ENGINEERING</h2>
+<h2 class="ribbontitle text-center engg" data-delay="100">ENGINEERING</h2>
 <div class="container" >
 <div class="bottom col-md-12 col-xs-12 boxes">
-<div class=" col-md-3 col-xs-12">
-	<div class="imagebox imageboxl">
+<div class=" col-md-4 col-xs-12">
+	<div class="imageboxl">
 		<img src="images/patterns/giftly.png"/>
 		<div class="title" style="background:coral">
-			<h5 style="color:#fff">SOLAR PV DESIGN CONTEST</h5>
-    </div>
-    <div class="icon text-center" style="font-size:35px">
-        <i class="fa fa-code"></i>
-      </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-  </p>
+			<h5 style="color:#fff">TITLE OF AN EVENT</h5>
+		</div>
 	</div>
 </div>
-<div class=" col-md-3 col-xs-12">
-	<div class="imagebox imageboxr">
+<div class=" col-md-4 col-xs-12">
+	<div class="imageboxr">
 		<img src="images/patterns/food.png"/>
 		<div class="title">
-			<h5>PAPER PRESENTATION</h5>
+			<h5>TITLE OF AN EVENT</h5>
 		</div>
 	</div>
 </div>
-<div class=" col-md-3 col-xs-12">
-	<div class="imagebox imageboxt">
+<div class=" col-md-4 col-xs-12">
+	<div class="imageboxt">
 		<img src="images/patterns/geometry.png"/>
 		<div class="title" style="background:seagreen">
-			<h5 style="color:#fff">MARKETING MADNESS</h5>
+			<h5 style="color:#fff">TITLE OF AN EVENT</h5>
 		</div>
 	</div>
-</div>
-<div class=" col-md-3 col-xs-12">
-  <div class="imagebox imageboxl">
-    <img src="images/patterns/giftly.png"/>
-    <div class="title" style="background:coral">
-      <h5 style="color:#fff">MURUGAPPA GROUP'S ROBOWARS</h5>
-    </div>
-  </div>
 </div>
 
 
@@ -433,62 +373,37 @@ body{
 </div>
 
 <!--navbar ends-->
-<div class="left col-md-12 col-xs-12" style="background:rgba(0,0,0,0.85); padding-bottom:40px">
-  <div class="tabs tabs-style-bar col-md-12 col-xs-12 paddingReset">
-    
-    <div class="cd-tabs">
-    <i class="close fa fa-times fa-2x fa-fw" style="color:#fff;"></i>
-
-      <nav>
-        <ul class="cd-tabs-navigation col-md-12 col-xs-12 clearfix paddingReset">
-          <li><a data-content="inbox" class="selected" href="#0"><i class="fa fa-info tabicon"></i><span>Introduction</span></a></li>
-          <li><a data-content="new" href="#0"><i class="fa fa-puzzle-piece tabicon"></i><span>Problem Statement</span></a></li>
-          <li><a data-content="gallery" href="#0"><i class="fa fa-hourglass-end tabicon"></i><span>Scoring</span></a></li>
-          <li><a data-content="store" href="#0"><i class="fa fa-thumb-tack tabicon"></i><span>Rules</span></a></li>
-          <li><a data-content="settings" href="#0"><i class="fa fa-newspaper-o tabicon"></i><span>Format</span></a></li>
-          <li><a data-content="settings" href="#0"><i class="fa fa-angellist tabicon"></i><span>Organizers</span></a></li>
-        </ul> <!-- cd-tabs-navigation -->
-      </nav>
-<button class="btn btn-danger subscribe"><i class="fa fa-paw"></i> SUBSCRIBE</button>
-
-  <ul class="cd-tabs-content">
-    <li data-content="inbox" class="selected">
-      <p>Inbox Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
-
-      <p>Inbox Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
-    </li>
-
-    <li data-content="new">
-      <p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
-
-      <p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
-    </li>
-
-    <li data-content="gallery">
-      <p>Gallery Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque tenetur aut, cupiditate, libero eius rerum incidunt dolorem quo in officia.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa vero, culpa doloremque voluptatum consectetur mollitia, atque expedita unde excepturi id, molestias maiores delectus quos molestiae. Ab iure provident adipisci eveniet quisquam ratione libero nam inventore error pariatur optio facilis assumenda sint atque cumque, omnis perspiciatis. Maxime minus quam voluptatum provident aliquam voluptatibus vel rerum. Soluta nulla tempora aspernatur maiores! Animi accusamus officiis neque exercitationem dolore ipsum maiores delectus asperiores reprehenderit pariatur placeat, quaerat sed illum optio qui enim odio temporibus, nulla nihil nemo quod dicta consectetur obcaecati vel. Perspiciatis animi corrupti quidem fugit deleniti, atque mollitia labore excepturi ut.</p>
-    </li>
-
-    <li data-content="store">
-      <p>Store Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, enim, pariatur. Ab assumenda, accusantium! Consequatur magni placeat quae eos dicta, cum expedita sunt facilis est impedit possimus dolorum sequi nostrum nobis sit praesentium molestias nulla laudantium fugit corporis nam ut saepe harum ipsam? Debitis accusantium, omnis repudiandae modi, distinctio illo voluptatibus aperiam odio veritatis, quam perferendis eaque ullam. Temporibus tempore ad voluptates explicabo ea sit deleniti ipsum quos dolores tempora odio, ab corporis molestiae, eaque optio, perferendis! Cumque libero quia modi! Totam magni rerum id iusto explicabo distinctio, magnam, labore sed nemo expedita velit quam, perspiciatis non temporibus sit minus voluptatum. Iste, cumque sunt suscipit facere iusto asperiores, ullam dolorum excepturi quidem ea quibusdam deserunt illo. Nesciunt voluptates repellat ipsam.</p>
-    </li>
-
-    <li data-content="settings">
-      <p>Settings Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nam magni, ullam nihil a suscipit, ex blanditiis, adipisci tempore deserunt maiores. Nostrum officia, ratione enim eaque nihil quis ea, officiis iusto repellendus. Animi illo in hic, maxime deserunt unde atque a nesciunt? Non odio quidem deserunt animi quod impedit nam, voluptates eum, voluptate consequuntur sit vel, et exercitationem sint atque dolores libero dolorem accusamus ratione iste tenetur possimus excepturi. Accusamus vero, dignissimos beatae tempore mollitia officia voluptate quam animi vitae.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique ipsam eum reprehenderit minima at sapiente ad ipsum animi doloremque blanditiis unde omnis, velit molestiae voluptas placeat qui provident ab facilis.</p>
-    </li>
-
-    <li data-content="trash">
-      <p>Trash Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque a iure nostrum animi praesentium, numquam quidem, nemo, voluptatem, aspernatur incidunt. Fugiat aspernatur excepturi fugit aut, dicta reprehenderit temporibus, nobis harum consequuntur quo sed, illum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima doloremque optio tenetur, natus voluptatum error vel dolorem atque perspiciatis aliquam nemo id libero dicta est saepe laudantium provident tempore ipsa, accusamus similique laborum, consequatur quia, aut non maiores. Consectetur minus ipsum aliquam pariatur dolorem rerum laudantium minima perferendis in vero voluptatem suscipit cum labore nemo explicabo, itaque nobis debitis molestias officiis? Impedit corporis voluptates reiciendis deleniti, magnam, fuga eveniet! Velit ipsa quo labore molestias mollitia, quidem, alias nisi architecto dolor aliquid qui commodi tempore deleniti animi repellat delectus hic. Alias obcaecati fuga assumenda nihil aliquid sed vero, modi, voluptatem? Vitae voluptas aperiam nostrum quo harum numquam earum facilis sequi. Labore maxime laboriosam omnis delectus odit harum recusandae sint incidunt, totam iure commodi ducimus similique doloremque! Odio quaerat dolorum, alias nihil quam iure delectus repellendus modi cupiditate dolore atque quasi obcaecati quis magni excepturi vel, non nemo consequatur, mollitia rerum amet in. Nesciunt placeat magni, provident tempora possimus ut doloribus ullam!</p>
-    </li>
-  </ul> <!-- cd-tabs-content -->
-</div> <!-- cd-tabs -->
+<div class="left col-md-12 col-xs-12" style="background:crimson">
+        <div class="tabs tabs-style-bar">
+  <i class="close fa fa-times fa-4x fa-fw"></i>
+          <nav class="tabnav">
+            <ul>
+          <li><button class="cbutton cbutton--effect-novak">
+            <a href="#section-bar-1"><i class="cbutton__icon fa-fw tabfa fa fa-bullhorn"></i><span> INTRODUCTION</span></a>
+          </button>
+          </li>
+      <li><button class="cbutton cbutton--effect-novak">
+            <a href="#section-bar-1"><i class="cbutton__icon fa-fw tabfa fa fa-bullseye"></i><span> PROBLEM STATEMENT</span></a>
+          </button>
+          </li>
+      <li><button class="cbutton cbutton--effect-novak">
+            <a href="#section-bar-1"><i class="cbutton__icon fa-fw tabfa fa fa-bullhorn"></i><span> SCORING CRITERIA </span></a>
+          </button>
+          </li>
+      <li><button class="cbutton cbutton--effect-novak">
+            <a href="#section-bar-1"><i class="cbutton__icon fa-fw tabfa fa fa-gears"></i><span> RULES OF THE EVENT</span></a>
+          </button>
+          </li>
+      <li><button class="cbutton cbutton--effect-novak">
+            <a href="#section-bar-1"><i class="cbutton__icon fa-fw tabfa fa fa-phone"></i><span> CONTACT THE ORAGANZERS</span></a>
+          </button>
+          </li>
+    </ul>
+          </nav>
+          <div class="content-wrap">
+            
+     <i class="fa fa-pencil subscribe"> SUBSCRIBE</i>
+            <section id="section-bar-1"><p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget tristique ligula. Proin non ante eget lacus rutrum aliquet. Fusce tempor eleifend lorem, et sagittis mauris convallis vel. Nulla congue, libero sit amet consectetur volutpat, turpis metus pharetra quam, sit amet consequat ligula sapien sit amet felis. Donec odio orci, interdum a neque et, cursus molestie neque. Etiam vehicula ac quam sit amet aliquet. Praesent eros elit, pretium nec neque elementum, fringilla fringilla ante. Aliquam sit amet risus iaculis, tempor lectus ut, sollicitudin mauris. Nunc vel ullamcorper odio. Aliquam erat volutpat. Pellentesque imperdiet, ipsum at pellentesque luctus, tortor massa dignissim odio, vel ultricies odio libero nec sem. Nulla imperdiet sagittis tortor eget vulputate. Proin dapibus quis arcu nec accumsan. Fusce aliquet augue vel purus tempus, sodales commodo enim faucibus. Integer congue mauris ut luctus aliquet.
 
 <form action="http://maps.google.com/maps" method="get" target="_blank">
    <label for="saddr">Enter your location</label>
@@ -497,8 +412,24 @@ body{
    <input type="submit" value="Get directions" />
 </form>
 
- </div>       
+            <section id="section-bar-2"><p>2</p></section>
+            <section id="section-bar-3"><p>3</p></section>
+            <section id="section-bar-4"><p>4</p></section>
+            <section id="section-bar-5"><p>5</p></section>
+          </div><!-- /content -->
+        </div><!-- /tabs -->
+         
 </div>
+
+<div class="right col-md-12 col-xs-12">
+	<h1>Boooyah!</h1>
+	<i class="close fa fa-times fa-4x fa-fw"></i>
+</div>
+<div class="right col-md-12 col-xs-12">
+	<h1>Boooyah!</h1>
+	<i class="close fa fa-times fa-4x fa-fw"></i>
+</div>
+
 
 <script>
 $(document).ready(function(){
@@ -531,6 +462,7 @@ $(".navbar-toggle").click(function(){
 });
 	
 </script>
+
 <!--navbar script-->
 <script>
 $(document).ready(function(){
@@ -544,13 +476,9 @@ $(".navbar-toggle").click(function(){
 if( $(window).width() >= 600)
 {
   $(".eventHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
-  $(".loginHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
 
   $("#eventsNav").hover(function(){
   $(".eventHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
-  });
-  $("#loginNav").hover(function(){
-  $(".loginHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
   });
 
   $(".navbar-nav li").hover(function(){
@@ -564,12 +492,6 @@ if( $(window).width() >= 600)
   $(".wkshopHeader").animate({'opacity':"0"});
   $(".wkshopHeader").fadeOut().finish();
   }
-
-    if($(this).attr("id") != "loginNav" )
-  {
-  $(".loginHeader").animate({'opacity':"0"});
-  $(".loginHeader").fadeOut().finish();
-  }
   });
 
   $(".eventHeader").hover(function(){
@@ -581,11 +503,6 @@ if( $(window).width() >= 600)
   }, function(){
    $(".wkshopHeader").animate({'opacity':"0"}).fadeOut();
   });
-
-  $(".loginHeader").hover(function(){
-  }, function(){
-   $(".loginHeader").animate({'opacity':"0"}).fadeOut();
-  });
   
   $(".wkshopHeader").animate({'opacity':"0"}).fadeOut().finish();
   $("#wkshopsNav").hover(function(){
@@ -595,6 +512,16 @@ if( $(window).width() >= 600)
 
 });
 </script>
+<script>
+      (function() {
+
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+          new CBPFWTabs( el );
+        });
+
+      })();
+    </script>
+
     <!--clickfx-->
     <script>
       (function() {
@@ -636,4 +563,13 @@ if( $(window).width() >= 600)
         } );
 
       })();
+    </script>
+    <script>
+    $(document).ready(function(){
+        $(".engg").flipping_text({
+        tickerTime: 50,
+        tickerCount: 5,
+        customRandomChar: "!@#$%^&*"
+      });s
+    });
     </script>
