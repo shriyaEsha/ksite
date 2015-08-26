@@ -1,0 +1,539 @@
+html,body{
+	width:100%;
+	height:100%;
+	overflow-x:hidden;
+	background:limegreen;
+	overflow-y:auto;
+}
+.paddingReset{
+	padding-left:0;
+	padding-right:0;
+}
+a{
+	text-decoration: none;
+	color:#333;
+}
+.white{
+	color:#fff;
+}
+.black{
+	color:#333;
+}
+.pink{
+	color:hotPink;
+}
+.center{
+	font-family:'Raleway',sans-serif;
+	text-align: center;
+}
+
+.landingContainer{
+	width:100%;
+	height:100%;
+
+	}
+
+.hiddenContainer{
+	visibility: hidden;
+	pointer-events:none;
+	position: absolute;
+}
+
+#limage{
+	width:100%; height:100%;
+	position: absolute;
+	
+}
+
+.icon-bar{
+	background:#fff;
+}
+
+.landingContainer .landing-box{
+	padding-left:30px;
+	padding-right: 30px;
+	padding-bottom:30px;
+	margin-right:30px;
+	position: absolute;
+	margin-top:0;	
+	width:100%; height:300px
+	font-family:'Raleway',sans-serif;
+	text-transform: uppercase;
+	background:rgba(255,255,255,0.3);
+
+}
+.landing-box h2{
+	padding-left:20px;
+	padding-right: 20px;
+}
+.landing-box p{
+	font-size:1.4em;
+	line-height:1.6;
+	margin-top:10px;
+	background:rgba(255,255,255,0.6);
+	padding:20px;
+	}
+/* NAVBAR */
+
+#ctf-logo{
+	height:50px;
+}
+.searchbar{
+
+	padding-left:5px;
+	background:white;
+	height:40px;
+	margin-top:10px;
+	width:200px;
+	display: inline-block;
+	font-weight: bold;
+	font-family: Roboto, sans-serif;
+	letter-spacing: 2px;
+	border:none;
+	color:#333;
+	font-size: 1.6em;
+	box-shadow:2px 3px 8px rgba(0,0,0,0.3);
+}
+
+.scrollDown{
+	color:#333;
+	cursor:pointer;
+	
+}
+
+.changeNav{
+	background:#fff;
+	color:#333;
+}
+.changeNavElem {
+	font-weight: bold;
+	color:black;
+	font-size:15px;
+	border:2px solid transparent;
+	text-decoration:none;
+	margin-top: 2px;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	transition:all 0.3s;
+
+}
+.changeNavElem:hover{
+	border:2px solid #333;
+	background: rgb(60, 100, 178) !important;
+	color: #fff;
+}
+
+nav.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+
+}
+.nav.navbar-nav a.navelem{
+	font-weight: bold;
+	color:white;
+	font-size:15px;
+	border:2px solid transparent;
+	text-decoration:none;
+	margin-top: 2px;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	transition:all 0.3s;
+
+}
+.nav.navbar-nav a.navelem:hover,
+.nav.navbar-nav a.navelem:focus,
+.nav.navbar-nav a.navelem:active{
+	border:2px solid white;
+	background:none;
+}
+
+.navicons{
+	background:none;
+	margin:5px;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	transition:all 0.3s;
+
+}
+BUTTON.btn.btn-sm.dropdown-toggle{
+	margin-top:13px;
+	background:none;
+	font-size:15px;
+	color:white;
+	border:2px solid transparent;
+	padding:5px;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	transition:all 0.3s;
+
+}
+BUTTON.btn.btn-sm.dropdown-toggle:hover{
+	background:rgb(60,100,178);
+
+	border:2px solid #333;
+}
+FORM.navbar-form.pull-right{
+	margin-top:15px;
+}
+INPUT.form-control{
+	border:1.3px solid transparent;
+	border-radius:0;
+}
+INPUT.form-control:focus
+{
+
+	border:1.3px solid rgba(0,200,150,0.8);
+	box-shadow:2px 3px 8px rgba(255,255,255,0.3);	
+}
+.submitBtn{
+	background: none;
+	border:border:1px solid transparent;
+	box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
+	color:white;
+	cursor:pointer;
+	margin-top: -2px;
+	height: 38px;
+
+	padding-bottom: 10px;
+}
+
+.submitBtn:hover{
+	color:#fff;
+	border:1px solid #fff;
+}
+
+.submitBtn:active .fa.fa-arrow-right,
+
+.submitBtnSmall:active .fa.fa-search{
+	color:rgb(0,200,150);
+}
+
+.navbar-brand{
+	margin-top:-10px;
+}
+
+/*newsitem*/
+.allnewsContainer{
+	margin-bottom:100px;
+}
+
+.newsitem{
+	margin-top:30px; margin-bottom: 20px;
+	width:100%;
+	height:auto;
+	background:#fff;
+	box-shadow: 0px 2px 3px #d2d2d2;
+	padding:30px;
+	
+}
+
+.title{
+	font-family:'Raleway',sans-serif;
+	font-size:1.3em;
+	text-transform: uppercase;
+	margin-top:-20px;
+}
+.date{
+	font-family:'Raleway',sans-serif;
+	font-size:0.9em;
+	color:orange;
+	padding-bottom:10px;
+	border-bottom:1px solid #333;
+	padding-top:20px;
+}
+p{
+		
+	font-size:1.1em;
+	font-family: 'Roboto',sans-serif;
+	line-height:1.6;
+	margin-bottom:5px;
+}
+.more{
+	font-weight:bold;
+	float:right;
+	font-size:1em;
+	cursor:pointer;
+}
+
+
+/* making the fonts responsive */
+@media all and (min-width: 960px) {
+	body{
+		font-size: 1.3em !important;
+	}
+	.newsitem{
+		margin-top:0;
+	}
+			.sympoitem img{
+				width:90%; height:50%;
+			}
+
+.allnewsContainer{
+	padding-left:100px; padding-right:100px;
+}
+.allblogsContainer{
+	padding-left:100px; padding-right:100px;
+}
+
+.quoteBox::after{
+	content:'';
+	position:absolute;
+	border-top:40px solid transparent;
+	border-bottom:40px solid transparent;
+	border-right:40px solid #fff;
+	left:-25px;
+	top:40px;
+}
+
+
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+	body{
+		font-size: 1.2em !important;
+	}
+
+	.newsitem{
+		margin-top:30px;
+	}
+
+	h1{
+		padding-top:30px;
+		padding-bottom:0;
+	}
+	.footer{
+
+		padding-bottom:10px;
+		margin-bottom: 10px;
+			}
+			.sympoitem img{
+				width:90%; height:40%;
+			}
+
+.allnewsContainer{
+	padding-left:0px; padding-right:0px;
+}
+
+
+}
+
+@media all and (max-width: 599px) and (min-width: 320px) {
+	body{
+		font-size: 12px !important;
+	}
+	.newsitem{
+		margin-top:30px;
+		}
+		h1{
+		padding-top:30px;
+		padding-bottom:0;
+	}
+	
+		.footer{
+
+		padding-bottom:10px;
+		margin-bottom: 10px;
+		}
+		.sympoitem img{
+				width:100%; height:40%;
+			}
+
+
+.quoteBox::after{
+	content:'';
+	position:absolute;
+	border-left:40px solid transparent;
+	border-right:40px solid transparent;
+	border-bottom:40px solid #fff;
+	left:40px;
+	top:-30px;
+}
+
+}
+
+/*projects*/
+
+.projectsContainer{
+	margin-bottom:50px;
+	padding-top:30px;
+	height:500px;
+	overflow:hidden;
+	display:inline-block;
+	width:100%;
+}
+.projectsContainer .seemore, .projectsContainer .seeless{
+	font-size:30px;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	top: 90%;
+	left: 0%;
+	z-index: 1;
+}
+
+.projitem{
+	width:100%;
+	height:auto;
+	height:auto;
+	background:#fff;
+	padding:30px;
+	margin-bottom:20px;
+	box-shadow: 0px 2px 3px #d2d2d2;
+	padding-bottom:20px;
+}
+.mainProjItem{
+	margin-bottom:30px;
+}
+.projImg{
+	overflow:hidden;
+	height:300px;
+}
+.imgOverlay{
+	width:100%;
+	height:100%;
+	background:rgba(30,30,30,0.2);
+	position: absolute;
+	top:0;
+	left:0;
+	margin-left:15px;
+	margin-right:15px;
+}
+.imgOverlay .imgTitle{
+	text-align: center;
+	font-family:'Raleway';
+	background:#fff;
+	padding:30px;
+	bottom:0;
+	margin-bottom:0px;
+	position: absolute;
+}
+.projImg img{
+	width:110%;
+	height:100%;
+}
+.quoteBox{
+	width:100%;
+	height:350px;
+	background:#fff;
+	box-shadow: 0px 2px 2px #d2d2d2;
+	border-radius:20px;
+	margin-bottom:30px;
+}
+.quoteBox p{
+	font-family: 'Roboto',sans-serif;
+	line-height:1.8;
+	font-size:1.2em;
+	margin-top:10px;
+}
+
+/*blogs*/
+.allblogsContainer{
+	margin-bottom: 100px;
+}
+
+.blogsContainer{
+margin-bottom:100px;
+height:580px;
+overflow:hidden;
+}
+.blogsContainer .seemore, .blogsContainer .seeless{
+	font-size:30px;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	top: 95%;
+	left: 0%;
+	z-index: 1;
+}
+
+
+.blogitem{
+	width:100%;
+	height:auto;
+	background:#fff;
+	box-shadow: 0px 2px 2px #d2d2d2;
+	margin-right:40px;
+	margin-bottom: 30px;
+}
+.blogitem img{
+	width:100%;
+	height:200px;
+
+}
+.title{
+	padding-top:10px;
+}
+.blogitem .title, .blogitem .date{
+	padding-left:30px; padding-right:30px;
+	margin-top:10px;
+	text-align: center;
+	padding-top: 10px;
+	
+}
+.blogitem p{
+	padding-bottom: 20px;
+	padding-left:30px; padding-right:30px;
+}
+
+/*symposium*/
+
+.sympoContainer{
+	width:100%;
+	
+	margin-bottom:30px;
+}
+.sympoitem{
+
+	width:100%;
+	height:auto;
+	box-shadow: 0px 2px 2px #d2d2d2;
+	
+	padding-bottom:30px;
+	
+	background:#fff;
+	margin-bottom:100px;
+}
+
+.sympoitem img{
+	
+	margin-left: auto; margin-right:auto;
+	display:block;
+	padding-bottom:20px;
+	}
+
+.sympoitem .symponame{
+	font-size:2em;
+	text-align:center;
+	padding:30px;
+	background:#fff;
+	color:#333;
+
+}
+
+.sympoitem .sympodesc{
+	padding-left:30px; padding-right:30px;
+	font-size:1.3em;
+	margin-bottom:10px;
+	line-height:1.6;
+	text-align:center;
+}
+
+/*footer */
+
+.footer{
+	width:100%;
+	background:#fff;
+	color:black;
+	font-size: 1em;
+	padding:5px;
+	bottom:0;
+}

@@ -9,9 +9,6 @@ html,body{
     font-family: Samarkan;
     src: url(fonts/SAMARN__.TTF);
 }
-ul{
-	list-style: none;
-}
 .bg{
 	background:#000;
 	width:100%;
@@ -20,17 +17,16 @@ ul{
 	background-repeat: no-repeat;
 	left:0;
 	position:absolute;	
-
+	
 }
 .overlay{
 	position:absolute;
 	background:rgba(0,0,0,0.1);
+	background-size:cover;
 	top:0px;
 	left:0;
 	width:100%;
 	height:100%;
-	/**overflow issues **/
-	/*	*/
 }
 
 /* NAVBAR */
@@ -260,6 +256,9 @@ cursor: pointer;
   background-position:0px 0px,60px 0px,0px 25px, 60px 25px;
   background-size:60px 25px;
   background-repeat: no-repeat;
+
+
+
 }
 .topVane .fa{
 	color:black;
@@ -274,10 +273,25 @@ cursor: pointer;
 	background-color:black;
 	border-radius:50%;
 }
-.openOut{
+.navbar-nav li:hover .topVane{
+/*-webkit-transform:rotateX(100deg);
+transform:rotateX(100deg);
+*/
 background-position:-25px -25px, 120px -25px, -25px 50px,120px 50px;
 background-color:rgba(0,0,0,0) !important;
 	}
+	
+.navbar-nav li:hover .sideVaneLeft{
+-webkit-transform:translateX(-100%);
+transform:translateX(-100%);
+
+}
+
+.navbar-nav li:hover .sideVaneRight{
+-webkit-transform:translateX(100%);
+transform:translateX(100%);
+
+}
 .eventsBox{
 	width:100%;
 	height:100px;
@@ -376,33 +390,7 @@ li ul{
 }
 
 @media all and (max-width: 599px) and (min-width: 320px) {
-/*karnival*/
 
-/*topPage*/
-.zoomIn{
-	margin-left:0 !important;
-	transform:scale(1) !important;
-	margin-top:-40% !important;
-	visibility: visible !important;
-}
-.karBox .topPage{
-   width:100%;
-  min-height:600px;
-  max-height:auto;
-  position:relative;
-  background:#eee;
-  color:#333;
-  margin-left:100px;
-  margin-bottom:30px;
-  padding:25px;
-  padding-bottom:10px;
-  transform:scale(5);
-  visibility: hidden;
-  -webkit-transition:all 0.3s;
-	-moz-transition:all 0.3s;
-	transition:all 0.3s;
-	
-}
 	.subscribe{
 	margin-top:10px;	
 	background:#d9534f !important;
@@ -445,6 +433,7 @@ body{
 }
 .eventHeader, .wkshopHeader{
 	visibility:hidden;
+
 }
 .topVane{
 	visibility:hidden;
@@ -500,55 +489,7 @@ ul li.eventCircleNav{
 }
 
 @media all and (min-width: 960px) {
-/*karnival*/
 
-/*topPage*/
-.zoomIn{
-	transform:scale(1) !important;
-	margin-top:-100% !important;
-	visibility: visible !important;
-}
-.karBox{
-	top:1000px;
-	position:absolute;
-	margin:auto;
-
-}
-.karBox .bottomPage{
-  transform-origin:50% 50%;
-  width:650px;
-  height:650px;
-  margin:auto;
-  margin-top:1000px;
-  margin-left:100px;
-  background:#ddd;
-  transform:rotate(45deg) scale(0.1) rotate3d(0,1,1,90deg);
-  position:relative;
-  visibility: hidden;
-  box-shadow:0px 2px 2px rgba(255,255,255,.3);
-  -webkit-transition:all 0.65s;
-	-moz-transition:all 0.65s;
-	transition:all 0.65s;
-	
-}
-.karBox .topPage{
-  width:650px;
-  min-height:650px;
-  max-height:auto;
-  position:relative;
-  background:#eee;
-  color:#333;
-  margin-left:100px;
-  margin-bottom:30px;
-  padding:25px;
-  padding-bottom:10px;
-  transform:scale(5);
-  visibility: hidden;
-  -webkit-transition:all 0.3s;
-	-moz-transition:all 0.3s;
-	transition:all 0.3s;
-	
-}
 .hospi_content{
 	 margin-top:100px;
  
@@ -610,20 +551,6 @@ UL.nav.navbar-nav.navbar-right{
 	z-index:9999;
 	margin-top:-12px;
 	position: absolute;
-	transform-origin:50% 0%;
-	transform:perspective(800px) rotateX(89deg);
-	-webkit-transform-origin:50% 0%;
-	-webkit-transform:perspective(800px) rotateX(89deg);
-	-webkit-transition:all 0.3s ease;
-	-moz-transition:all 0.3s ease;
-	transition:all 0.3s ease;
-	visibility:hidden;
-
-}
-
-.dropDown{
-	transform:rotateX(0deg);
-	visibility:visible;
 }
 .navbar-brand:hover,.navbar-brand:active,.navbar-brand:focus{
 	background:none !important;
@@ -916,340 +843,4 @@ transform:rotateX(100deg);
 .hospi_animated{
 	transform:rotateX(0deg) rotateY(0deg) translateY(0px);
 	opacity:1;
-}
-/** Karnival **/
-.outerCircle{
-	position: relative;
-	top:30px;
-	width:600px;
-	height:600px;
-	background:#ddd;
-	border-radius:50%;
-	margin:auto;
-	box-shadow:3px 3px 15px rgba(255,255,255,.3);
-	display:block;
-}
-.outerCircle .innerCircle{
-	width:300px;
-	height:300px;
-	border-radius:50%;
-	margin:auto;
-	position:relative;
-	top:25%;
-	display:block;
-	background:crimson;
-	box-shadow:3px 3px 15px rgba(0,0,0,0.3);
-				}
-.outerCircle .smallCircle{
-	position: relative;
-	width:150px;
-	height:150px;
-	margin-left:13px;
-	border-radius:50%;
-	background:teal;
-}
-/*karnival*/
-.closeme{
-	-webkit-transition:all 0.3s;
-	-moz-transition:all 0.3s;
-	transition:all 0.3s;
-	cursor: pointer;
-}
-.closeme:hover{
-	color:crimson;
-}
-/*anims*/
-
-/*karBox*/
-.floatUp{
-	top:200px !important;
-}
-/*botPage*/
-.rotateUp{
-	margin-top:0 !important;
-	transform:scale(1) rotate(225deg) rotate3d(0,1,1,0deg) !important;
-	visibility: visible !important;
-}
-/*contacts*/
-.margin-top-lg{
-  margin-top:50px;
-}
-ul{
-  list-style: none;
-}
-.bucketCircle{
-  float: left;
-  display: inline-block;
-  width:150px;
-  height:150px;
-  background:url(images/red_light.jpg);
-  padding:20px;
-  text-align: center;
-  margin:50px;
-  vertical-align: middle;
-  border-radius:50%;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 10px rgba(255,255,255,0.45),
-              -3px -3px 15px rgba(255,255,255,0.08),
-              3px -3px 15px rgba(255,255,255,0.08),
-              -3px 3px 15px rgba(255,255,255,0.08),
-              3px 3px 15px rgba(255,255,255,0.08);
--moz-transition:all 0.4s;
--webkit-transition:all 0.4s;
- transition:all 0.4s;
-
-}
-.bucketCircle .bucketName{
-  margin-top:40%;
-  line-height:1.6;
-  color:#fff;
-  font-weight: 600;
-  font-family: 'Roboto',sans-serif;
-}
-.left{
-  top:0;
-  position:absolute;
-  width:100%;
-  height:auto;
-  margin-top:53px;
-  margin-left:100%;
-    }
-.left h1{
-  text-align: center;
-  }
-.close{
-  cursor: pointer;
-  color:#fff;
-}
-.close:hover{
-  color:#fff;
-}
-.popOut, .popOutFast{
-  -webkit-animation:scaleDown 0.25s ease-in-out forwards;
-  -moz-animation:scaleDown 0.25s ease-in-out forwards;
-  animation:scaleDown 0.25s ease-in-out forwards;
-  visibility: hidden;
-  pointer-events:none;
-  -moz-transition:all 0.4s;
-  -webkit-transition:all 0.4s;
-  transition:all 0.4s;
-}
-.popOutFast{
-  -webkit-animation:scaleDown 0.05s ease-in-out forwards;
-  -moz-animation:scaleDown 0.05s ease-in-out forwards;
-  animation:scaleDown 0.05s ease-in-out forwards;
-  -moz-transition:all 0.1s;
-  -webkit-transition:all 0.1s;
-  transition:all 0.1s;
-  
-}
-@-webkit-keyframes scaleDown{
-  0%{transform:scale(1.1);}
-  7%{transform:scale(1.2);}
-  14%{transform:scale(1);}
-  21%{transform:scale(0.9);}
-  28%{transform:scale(0.8);}
-  35%{transform:scale(0.7);}
-  42%{transform:scale(0.6);}
-  49%{transform:scale(0.5);}
-  56%{transform:scale(0.4);}
-  77%{transform:scale(0.3);}
-  84%{transform:scale(0.2);}
-  91%{transform:scale(0.1);}
-  100%{transform:scale(0);}
-}
-
-@keyframes scaleDown{
-  0%{transform:scale(1.1);}
-  7%{transform:scale(1.2);}
-  14%{transform:scale(1);}
-  21%{transform:scale(0.9);}
-  28%{transform:scale(0.8);}
-  35%{transform:scale(0.7);}
-  42%{transform:scale(0.6);}
-  49%{transform:scale(0.5);}
-  56%{transform:scale(0.4);}
-  77%{transform:scale(0.3);}
-  84%{transform:scale(0.2);}
-  91%{transform:scale(0.1);}
-  100%{transform:scale(0);}
-}
-/*Karnival*/
-.karCircles{
-  width:100%;
-  height:100%;
-  margin-top:40px;
-}
-.karCircles .karCircle{
-  width:300px;
-  height:300px;
-  background:#ddd;
-  border-radius:50%;
-  box-shadow:0px 3px 10px rgba(255,255,255,0.3);
-  cursor: pointer;
-  margin-top:20px;
-  margin-bottom:50px;
-  margin-right:100px;
-  -webkit-transition:all 0.3s;
-  -moz-transition:all 0.3s;
-  -o-transition:all 0.3s;
-  -ms-transition:all 0.3s;
-  transition:all 0.3s;
-
-}
-.karCircle .karInnerCircle{
-  width:230px;
-  height:230px;
-  margin:auto;
-  position: relative;
-  margin-top:13%;
-  background:crimson;
-  border:10px solid #444;
-  box-shadow:0 0 0 20px inset #333, 0px 3px 10px rgba(255,255,255,0.3);
-  border-radius:50%;
-  -webkit-transition:all 0.3s;
-  -moz-transition:all 0.3s;
-  -o-transition:all 0.3s;
-  -ms-transition:all 0.3s;
-  transition:all 0.3s;
-
-}
-.karInnerCircle img{
-  width:100%;
-  height: 100%;
-  border-radius: 50%;
-    -webkit-transition:all 0.3s;
-  -moz-transition:all 0.3s;
-  -o-transition:all 0.3s;
-  -ms-transition:all 0.3s;
-  transition:all 0.3s;
-
-}
-.karInnerCircle .overlay{
-  position:absolute;
-  top:0;
-  width:100%;
-  height: 100%;
-  border-radius:50%;
-  background:rgba(0,0,0,0.3);
-    -webkit-transition:all 0.3s;
-  -moz-transition:all 0.3s;
-  -o-transition:all 0.3s;
-  -ms-transition:all 0.3s;
-  transition:all 0.3s;
-
-}
-.karInnerCircle .fa-play{
-  position:relative;
-  font-size:35px;
-  color:#fff;
-  top:45%;
-  left:45%;
-  text-shadow:0px 1px 2px rgba(0,0,0,0.6);
-  transform-origin:50% 50%;
-  -webkit-transform-origin:50% 50%;
-    -webkit-transition:all 0.3s;
-  -moz-transition:all 0.3s;
-  -o-transition:all 0.3s;
-  -ms-transition:all 0.3s;
-  transition:all 0.3s;
-
-}
-.karInnerCircle:hover .fa-play{
-  -moz-animation:flipColor 0.3s ease forwards;
-  -webkit-animation:flipColor 0.3s ease forwards;
-  -o-animation:flipColor 0.3s ease forwards;
-  animation:flipColor 0.3s ease forwards;
-}
-.karInnerCircle:hover .overlay{
-  background:rgba(0,0,0,0);
-}
-@-webkit-keyframes flipColor{
-  0%{ color:#fff;}
-  33%{ -webkit-transform:rotateX(90deg) scale(1.3);}
-  66%{ -webkit-transform:rotateX(90deg) scale(1.5);}
-  100%{ -webkit-transform: scale(1.3); color:crimson;}
-}
-
-@keyframes flipColor{
-  0%{ color:#fff;}
-  33%{ transform:rotateX(90deg) scale(1.3);}
-  66%{ transform:rotateX(90deg) scale(1.5);}
-  100%{ transform: scale(1.3); color:crimson;}
-}
-
-/*tooltip for karCircle */
-.karCircle .karTooltip{
-  width:100%;
-  height:auto;
-  background:#eee;
-  color:#333;
-  font-size:14px;
-  padding:5px;
-  position: relative;
-  margin-top:50px;
-}
-.karTooltip::before{
-  content:'';
-  position:absolute;
-  top:-10px;
-  left:43%;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  border-bottom:10px solid #eee;
-}
-
-.topPage .karImCircle{
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    margin:auto;
-    border:6px solid #333;
-    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-  }
-
-  .karImCircle img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    
-  }
-
-.topPage p{
-  font-size:18px;
-  line-height:1.8;
-}
-.karDetails{
-  padding-top:10px;
-}
-.karDetails h5{
-  font-size: 16px;
-  line-height:1.5;
-  font-weight:600;
-  text-decoration: underline;
-}
-.karTime::before{
-  content:' at ';
-  font-style: italic;
-}
-
-
-.flyLeft{
-	transform:translateX(-2000px) translateY(1500px) scale(0.8);
-	-moz-transition: transform 0.65s linear forwards;
-}
-.flyRight{
-	transform:translateX(-2000px) translateY(1500px) scale(0.8);
-	-moz-transition: transform 0.65s linear forwards;
-
-}
-
-.flyTop{
-	transform:translateX(600px) translateY(-2500px) scale(0.8);
-	-moz-transition: transform 0.65s linear forwards;
-}
-.flyBottom{
-	transform:translateX(600px) translateY(2500px) scale(0.8);
-	-moz-transition: transform 0.65s linear forwards;
-
 }
